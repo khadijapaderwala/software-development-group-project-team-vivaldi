@@ -1,0 +1,14 @@
+#import module
+from flask import Flask
+
+#create object
+app = Flask(__name__)
+
+#define route to landing page
+@app.route('/')
+def index():
+	return 'Welcome to the Type 1 Diabetes search portal!' 
+
+#run the server in debug mode
+if __name__ == '__main__':
+	app.run(debug=True)
