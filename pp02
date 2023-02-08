@@ -1,0 +1,33 @@
+#import module
+from flask import Flask
+
+#create application object
+app = Flask(__name__)
+
+#route to landing page
+@app.route('/')
+def index():
+	return 'Welcome to the Type 1 Diabetes search portal!'
+
+# define a route called snp that accepts snp name as a parameter
+@app.route('/snp/<snp_name>') #when someone goes to this page, the following happens
+def snp(snp_name):
+	snp_name = snp_name.upper()  # ensure name is in capital letters
+	return "We don't have any information about a SNP called %s." % snp_name #message returned to user
+
+#define a route called gene that accepts gene name as a parameter
+@app.route('/gene/<gene_name>')
+def gene(gene_name):
+	gene_name = gene_name.upper()  # ensure name is in capital letters
+	return "We don't have any information about a gene called %s." % gene_name
+
+#define a route called position that accepts genomic position as a parameter
+@app.route('/position/<gen_pos>')
+def genpos(gen_pos):
+	gen_pos = gen_pos.upper()  # ensure name is in capital letters
+	return "We don't have any information about genomic position %s." % gen_pos
+
+
+# start the web server
+if __name__ == '__main__':
+	app.run(debug=True)
