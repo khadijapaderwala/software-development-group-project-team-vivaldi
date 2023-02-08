@@ -1,0 +1,93 @@
+#import modules
+from flask import Flask
+import pandas as pd
+
+# create a flask application object
+app = Flask(__name__)
+
+# define the action for the top level route
+@app.route('/')
+def index():
+	return 'Welcome to the Type 1 Diabetes search portal!'
+
+# define a route called snp that accepts a snp name as a parameter
+@app.route('/snp/<snp_name>')
+def snp(snp_name):
+
+	# load protein data from TSV file into pandas dataframe with snp name as index
+	df = pd.read_csv("snp.tsv",sep='\t', index_col=0)
+
+	#snp_name = snp_name.upper()  # ensure name is in capital letters
+
+	try:  # try to extract row for specified snp
+		row = df.loc[snp_name]
+		# if snp is found in snp_name column, return information about it
+		return '<h1>' + snp_name + '</h1>' \
+		+ '<p>Position: ' + row.pos + '</p>' \
+		+ '<p>Reference Allele: ' + row.ref_allele + '</p>' \
+		+ '<p>Alternate Allele: ' + row.alt_allele + '</p>' \
+		+ '<p>Gene Name: ' + row.gene_name + '</p>' \
+		+ '<p>Clinical Significance: ' + row.clinical_sig + '</p>' \
+
+	except:
+		# if protein is not found a error is given
+		return "We can't find any information about a SNP called %s." % snp_name
+    
+    
+    
+    
+#define route called gene that accepts gene name as a parameter
+@app.route('/gene/<gene_name>')
+def gene(gene_name):
+
+	# load protein data from TSV file into pandas dataframe with snp name as index
+	df1 = pd.read_csv("snp.tsv",sep='\t', index_col=4)
+
+	gene_name = gene_name.upper()  # ensure name is in capital letters
+
+	try:  # try to extract row for specified snp
+		row1 = df1.loc[gene_name]
+		# if gene is found in gene_name column, return information about it
+		return '<h1>' + gene_name + '</h1>' \
+		+ '<p>SNP Name: ' + row1.snp_name + '</p>' \
+		+ '<p>Position: ' + row1.pos + '</p>' \
+		+ '<p>Reference Allele: ' + row1.ref_allele + '</p>' \
+		+ '<p>Alternate Allele: ' + row1.alt_allele + '</p>' \
+		+ '<p>Clinical Significance: ' + row1.clinical_sig + '</p>' \
+
+	except:
+		# if protein is not found a error is given
+		return "We can't find any information about a gene called %s." % gene_name
+
+
+    
+#define route called position that accepts genomic position as a parameter
+@app.route('/position/<pos>')
+def position(pos):
+
+	# load protein data from TSV file into pandas dataframe with snp name as index
+	df2 = pd.read_csv("snp.tsv",sep='\t', index_col=1)
+
+	#pos = pos.upper()  # ensure name is in capital letters
+
+	try:  # try to extract row for specified snp
+		row2 = df2.loc[pos]
+		# if gene is found in gene_name column, return information about it
+		return '<h1>' + pos + '</h1>' \
+		+ '<p>SNP Name: ' + row2.snp_name + '</p>' \
+		+ '<p>Gene Name: ' + row2.gene_name + '</p>' \
+		+ '<p>Reference Allele: ' + row2.ref_allele + '</p>' \
+		+ '<p>Alternate Allele: ' + row2.alt_allele + '</p>' \
+		+ '<p>Clinical Significance: ' + row2.clinical_sig + '</p>' \
+
+	except:
+		# if protein is not found a error is given
+		return "We can't find any information about a genomic position called %s." % pos
+
+    
+    
+    
+
+# start the web server
+if __name__ == '__main__':
+	app.run(debug=True)
