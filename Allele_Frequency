@@ -1,3 +1,4 @@
+# The function takes two prompts as input. filename which will be the population vcf file and output which is the txt file that the allele frequencies are written to.
 def Allele_Frequency(filename, output):
     with open(filename, "r") as f:
         # Open the output file
@@ -5,7 +6,7 @@ def Allele_Frequency(filename, output):
             # Write the header line to the output file
             out_f.write("CHROM\tPOS\tREF\tALT\tREF_FREQ\tALT_FREQ\n")
         
-            # Iterate over each line in the British.vcf file
+            # Iterate over each line in the vcf file
             for line in f:
                 # Skip header lines
                 if line.startswith("#"):
