@@ -30,21 +30,30 @@ SNP: {{ id }}
 	      notice how the URL in the link above is rendered for
 	      Flask - it needs to name the FUNCTION, not the route
       -->
+      
+      <!-- it knows what table its looking at due to it saying in the main code -->
 
         <table class="table">
             <tr>
-                <th>SNP_ID</th>
+                <th>SNP_ID</th>     <!-- the titles that will appear on the output page -->
+                <th>Context_ID</th>
                 <th>Intergenic</th>
                 <th>P_value</th>
+                <th>CADD</th>
                 <th>PUBMEDID</th>
+                
+            
             </tr>
 
             <!-- here is a for-loop to give us all the SNPS -->
+            <!-- the dataframe row index number (technically column) corresponds to the headings above -->
             {% for row in rows %}
             <tr>
-                <td>{{ row[0] }}</td>
+                <td>{{ row[0] }}</td> 
+                <td>{{ row[1] }}</td>
                 <td>{{ row[2] }}</td>
-                <td>${{ row[3] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
                 <td>{{ row[5] }}</td>
             </tr>
             {% endfor %}
