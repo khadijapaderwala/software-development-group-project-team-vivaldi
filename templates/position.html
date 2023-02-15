@@ -1,0 +1,63 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Genomic Position: {{ pos }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+
+      <!-- note, the id is not used in the template -->
+
+      <h1 class="pt-5 pb-2">{{ pos }}</h1>
+
+      <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+
+	  <!--
+	      notice how the URL in the link above is rendered for
+	      Flask - it needs to name the FUNCTION, not the route
+      -->
+      
+      <!-- it knows what table its looking at due to it saying in the server.py code -->
+
+        <table class="table">
+            <tr>
+                <th>SNP_ID</th>
+                <th>CHR_ID</th>
+                <th>CHR_pos</th>
+                
+                
+            
+            </tr>
+
+            <!-- here is a for-loop to give us all the SNPS -->
+            <!-- the dataframe row number (technically column) corresponds to the headings above -->
+
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
