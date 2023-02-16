@@ -1,5 +1,9 @@
-## Software development project
-## Team Vivaldi
+##  Software Development Project
+##  Team Vivaldi
+
+## Description
+
+## Dependencies
 
 ## Environment setup
 
@@ -55,3 +59,15 @@ Since we're using a private repo, we need to generate a personal access token ([
 ```shell
 git checkout -b <feature>
 ```
+
+## Data Wrangling
+## GWAS data
+## Population Data
+
+All the population data that we used was obtained from the international genome sample resource (IGSR) website. https://www.internationalgenome.org/data-portal/sample . The data collection was filtered to 1000 genomes on GRCh38 data. We have selected three populations to calculate the population allele frequencies and linkage disequilibriums (LD) however you can choose any suitable populations and how many populations based off your preferences. The three populations we have selected are: 
+
+British in England and Scotland (GBR)
+
+Esan in Nigeria (ESN) 
+
+Japanese in Tokyo, Japan (JPT) 
