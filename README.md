@@ -1,4 +1,5 @@
-# Software development project
+## Software development project
+## Team Vivaldi
 
 ## Environment setup
 
