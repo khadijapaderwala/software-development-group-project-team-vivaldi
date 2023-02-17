@@ -26,40 +26,47 @@ def index():
     # 'form' is the variable name used in this template: index.html
     form = NameForm()
     message = ""
-    if form.validate_on_submit():
-        id = form.id.data
-        if id[:2] == 'rs':
-            # empty the form field
-            form.id.data = ""
-            # redirect the browser to another route and template
-            return redirect( url_for('SNPs', id=id) )
-        elif id[:3] == 'chr':
-            if id.find('-') != -1:
-                # match only  searches only from the beginning of the string and return match object if found. But if a match of substring is found somewhere in the middle of the string, it returns none. 
-                chr_n = (re.match('chr(.*):', id)).group(1)
-                # search searches for the whole string even if the string contains multi-lines and tries to find a match of the substring in all the lines of string.
-                chr_p1 = (re.search(':(.*)-', id)).group(1)
-                chr_p2 = (re.search('-(.*)', id)).group(1)
+    try:
+        if form.validate_on_submit():
+            id = form.id.data
+            if id[:2] == 'rs':
+                # empty the form field
                 form.id.data = ""
-                return redirect( url_for('Region_range', chr_n=chr_n, chr_p1=chr_p1, chr_p2=chr_p2) )
+                # redirect the browser to another route and template
+                return redirect( url_for('SNPs', id=id) )
+            elif id[:3] == 'chr':
+                if id.find('-') != -1:
+                    # match only  searches only from the beginning of the string and return match object if found. But if a match of substring is found somewhere in the middle of the string, it returns none. 
+                    chr_n = (re.match('chr(.*):', id)).group(1)
+                    # search searches for the whole string even if the string contains multi-lines and tries to find a match of the substring in all the lines of string.
+                    chr_p1 = (re.search(':(.*)-', id)).group(1)
+                    chr_p2 = (re.search('-(.*)', id)).group(1)
+                    form.id.data = ""
+                    return redirect( url_for('Region_range', chr_n=chr_n, chr_p1=chr_p1, chr_p2=chr_p2) )
+                else:
+                    chr_n = (re.match('chr(.*):', id)).group(1)
+                    chr_p1 = (re.search(':(.*)', id)).group(1)
+                    form.id.data = ""
+                    return redirect( url_for('Region_single', chr_n=chr_n, chr_p1=chr_p1) )
             else:
-                chr_n = (re.match('chr(.*):', id)).group(1)
-                chr_p1 = (re.search(':(.*)', id)).group(1)
-                form.id.data = ""
-                return redirect( url_for('Region_single', chr_n=chr_n, chr_p1=chr_p1) )
-        else:
-            conn = sqlite3.connect('Database/GWAS.db') #connect to database
-            cur = conn.cursor()
-            id = id.upper()
-            cur.execute("SELECT Gene_ID FROM SNP_Gene WHERE Gene_ID=?", [id])
-            rows = cur.fetchall()
-            if len(rows) == 0:
-                message = """Hey, looks like you're searching something wild. 
-                If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]'.
-                Otherwise, it ain't in the database."""
-            else:
-                return redirect(url_for('Gene', id=id))
-    return render_template('index.html', form=form, message=message)
+                conn = sqlite3.connect('Database/GWAS.db') #connect to database
+                cur = conn.cursor()
+                id = id.upper()
+                cur.execute("SELECT Gene_ID FROM SNP_Gene WHERE Gene_ID=?", [id])
+                rows = cur.fetchall()
+                if len(rows) == 0:
+                    message = """Hey, looks like you're searching something wild. 
+                    If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:[coordinate]'.
+                    Otherwise, it ain't in the database."""
+                else:
+                    return redirect(url_for('Gene', id=id))
+        return render_template('index.html', form=form, message=message)
+    except Exception:
+        message = """Hey, looks like you're searching something wild. 
+        If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:[coordinate]'.
+        Otherwise, it ain't in the database."""
+        return render_template('index.html', form=form, message=message)
+
    
 @app.route('/SNPs/<id>')
 def SNPs(id):
