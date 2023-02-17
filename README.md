@@ -64,10 +64,7 @@ git checkout -b <feature>
 ## GWAS data
 ## Population Data
 
-All the population data that we used was obtained from the international genome sample resource (IGSR) website. https://www.internationalgenome.org/data-portal/sample . The data collection was filtered to 1000 genomes on GRCh38 data. We have selected three populations to calculate the population allele frequencies and linkage disequilibriums (LD) however you can choose any suitable populations and how many populations based off your preferences. The three populations we have selected are: 
-
-British in England and Scotland (GBR)
-
-Esan in Nigeria (ESN) 
-
-Japanese in Tokyo, Japan (JPT) 
+All the population data that we used was obtained from the international genome sample resource (IGSR) available at: https://www.internationalgenome.org/data-portal/sample . The data collection was filtered to 1000 genomes on GRCh38 data. We have selected three populations to calculate the population allele frequencies and linkage disequilibriums (LD) however, you can choose any suitable populations and however many populations based off your preferences. The three populations we have selected are: 
+- British in England and Scotland (GBR)
+- Esan in Nigeria (ESN) 
+- Japanese in Tokyo, Japan (JPT) 
