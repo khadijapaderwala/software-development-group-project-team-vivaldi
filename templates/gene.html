@@ -10,7 +10,7 @@
 
 
 {% block title %}
-Gene: {{ gene }}
+Gene: {{ id }}
 {% endblock %}
 
 
@@ -22,7 +22,7 @@ Gene: {{ gene }}
 
       <!-- note, the id is not used in the template -->
 
-      <h1 class="pt-5 pb-2">{{ gene }}</h1>
+      <h1 class="pt-5 pb-2">{{ id }}</h1>
 
       <p><a href="{{ url_for('index') }}">Return to search page</a></p>
 
@@ -30,28 +30,26 @@ Gene: {{ gene }}
 	      notice how the URL in the link above is rendered for
 	      Flask - it needs to name the FUNCTION, not the route
       -->
-      
-      <!-- it knows what table its looking at due to it saying in the server.py code -->
-
+        <input type="submit">
         <table class="table">
-            <tr>
-                <th>Gene_ID</th>
-                <th>functional</th>
-                <th>ontology</th>
-                
-                
-            
+            <tr> 
+                <th>Linkage Disequilibrium</th>
+                <th>SNP ID</th>
+                <th>P-value</th>
+                <th>Chromosome Number</th>
+                <th>Position</th>
+                <th>Mapped Gene</th>
             </tr>
 
             <!-- here is a for-loop to give us all the SNPS -->
-            <!-- the dataframe row number (technically column) corresponds to the headings above -->
-
             {% for row in rows %}
-            <tr>
+            <tr> 
+                <td><input type="checkbox" name="LD" value={{row[1]}}></td>
                 <td>{{ row[0] }}</td>
                 <td>{{ row[1] }}</td>
                 <td>{{ row[2] }}</td>
-                
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
             </tr>
             {% endfor %}
         </table>
@@ -61,3 +59,4 @@ Gene: {{ gene }}
 </div>
 
 {% endblock %}
+
