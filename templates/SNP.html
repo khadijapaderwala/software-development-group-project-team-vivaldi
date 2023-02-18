@@ -30,31 +30,43 @@ SNP: {{ id }}
 	      notice how the URL in the link above is rendered for
 	      Flask - it needs to name the FUNCTION, not the route
       -->
-      
-      <!-- it knows what table its looking at due to it saying in the main code -->
-
+       
+         <input type="submit">
         <table class="table">
             <tr>
-                <th>SNP_ID</th>     <!-- the titles that will appear on the output page -->
-                <th>Context_ID</th>
-                <th>Intergenic</th>
-                <th>P_value</th>
+                <th>Linkage Disequilibrium</th>
+                <th>SNP_ID</th>
+                <th>P Value</th>
+                <th>Chromosome Number</th>
+                <th>Position</th>
+                <th>Mapped Gene</th>
                 <th>CADD</th>
-                <th>PUBMEDID</th>
-                
-            
+                <th>Function</th>
+                <th>GBR_REF</th>
+                <th>GBR_ALT</th>
+                <th>JPT_REF</th>
+                <th>JPT_ALT</th>
+                <th>ESN_REF</th>
+                <th>ESN_ALT</th>  
             </tr>
 
             <!-- here is a for-loop to give us all the SNPS -->
-            <!-- the dataframe row index number (technically column) corresponds to the headings above -->
             {% for row in rows %}
             <tr>
-                <td>{{ row[0] }}</td> 
+               <td><input type="checkbox" name="LD" value={{row[1]}}></td>
+                <td>{{ row[0] }}</td>
                 <td>{{ row[1] }}</td>
                 <td>{{ row[2] }}</td>
                 <td>{{ row[3] }}</td>
                 <td>{{ row[4] }}</td>
                 <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>{{ row[10] }}</td>
+                <td>{{ row[11] }}</td>
+                <td>{{ row[12] }}</td>
             </tr>
             {% endfor %}
         </table>
@@ -64,3 +76,4 @@ SNP: {{ id }}
 </div>
 
 {% endblock %}
+
