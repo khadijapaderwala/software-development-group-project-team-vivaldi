@@ -54,3 +54,7 @@ Since we're using a private repo, we need to generate a personal access token ([
 ```shell
 git checkout -b <feature>
 ```
+
+## Updating the requirements.txt file 
+
+[https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/]
