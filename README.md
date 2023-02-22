@@ -60,6 +60,11 @@ Since we're using a private repo, we need to generate a personal access token ([
 git checkout -b <feature>
 ```
 
+
+## Updating the requirements.txt file 
+
+[https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/]
+
 ## Data Wrangling
 ## GWAS data
 ## Population Data
@@ -68,3 +73,4 @@ All the population data that we used was obtained from the international genome 
 - British in England and Scotland (GBR)
 - Esan in Nigeria (ESN) 
 - Japanese in Tokyo, Japan (JPT) 
+
