@@ -1,6 +1,5 @@
 ### This file is for the big function that will take 2 rs IDs and output the LD measures 
 
-
 import sqlite3
 
 def LinkageDisequilibrium(rs_ID1, rsID_2):
