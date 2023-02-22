@@ -1,0 +1,79 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+SNP: {{ id }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+
+      <!-- note, the id is not used in the template -->
+
+      <h1 class="pt-5 pb-2">{{ id }}</h1>
+
+      <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+
+	  <!--
+	      notice how the URL in the link above is rendered for
+	      Flask - it needs to name the FUNCTION, not the route
+      -->
+       
+         <input type="submit">
+        <table class="table">
+            <tr>
+                <th>Linkage Disequilibrium</th>
+                <th>SNP_ID</th>
+                <th>P Value</th>
+                <th>Chromosome Number</th>
+                <th>Position</th>
+                <th>Mapped Gene</th>
+                <th>CADD</th>
+                <th>Function</th>
+                <th>GBR_REF</th>
+                <th>GBR_ALT</th>
+                <th>JPT_REF</th>
+                <th>JPT_ALT</th>
+                <th>ESN_REF</th>
+                <th>ESN_ALT</th>  
+            </tr>
+
+            <!-- here is a for-loop to give us all the SNPS -->
+            {% for row in rows %}
+            <tr>
+               <td><input type="checkbox" name="LD" value={{row[1]}}></td>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>{{ row[10] }}</td>
+                <td>{{ row[11] }}</td>
+                <td>{{ row[12] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

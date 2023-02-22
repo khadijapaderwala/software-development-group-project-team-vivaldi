@@ -1,0 +1,61 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Position: {{ chr_n }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+
+      <!-- note, the id is not used in the template -->
+
+      <h1 class="pt-5 pb-2">Region: chr{{ chr_n }}:{{ chr_p1 }}-{{ chr_p2 }}</h1>
+
+      <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+
+	  <!--
+	      notice how the URL in the link above is rendered for
+	      Flask - it needs to name the FUNCTION, not the route
+      -->
+
+      <input type="submit">
+        <table class="table">
+            <tr>
+                <th>Linkage Disequilibrium</th>
+                <th>SNP ID</th>
+                <th>P-value</th>
+                <th>Chromosome Number</th>
+                <th>Chromosome Positon</th>
+                <th>Mapped Gene</th>
+            </tr>
+
+            <!-- here is a for-loop to give us all the SNPS -->
+            {% for row in rows %}
+            <tr>
+                <td><input type="checkbox" name="LD" value={{row[1]}}></td>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
