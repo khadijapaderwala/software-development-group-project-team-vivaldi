@@ -181,11 +181,11 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
     # STEP 4
     ##########
     # calculating PA, PB, PAB frequencies needed for the LD calculation 
-    def count_PA_PB_PAB(haplotype_counts):
+    def count_PA_PB_PAB_british(haplotype_counts):
         '''
         Function obtains the PA, PB, PAB allele frequencies needed for r^2 and D' calculations
         In this case, I'm dividing the frequencies by the total individuals in the population
-        The British population we used had 100 individuals
+        The British population we used had 100 individuals, so 200 alleles
         '''
         count_dict = {'PA': 0, 'PB': 0, 'PAB': 0}
         total = 200 # will need to update this, different for each population. 
@@ -195,14 +195,42 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
 
         return count_dict
 
+    def count_PA_PB_PAB_nigerian(haplotype_counts):
+        '''
+        Function obtains the PA, PB, PAB allele frequencies needed for r^2 and D' calculations
+        In this case, I'm dividing the frequencies by the total individuals in the population
+        The Nigerian population we used had 100 individuals, so 200 alleles
+        '''
+        count_dict = {'PA': 0, 'PB': 0, 'PAB': 0}
+        total = 200 # will need to update this, different for each population. 
+        count_dict['PA'] = (haplotype_counts['00']+haplotype_counts['01'])/total
+        count_dict['PB'] = (haplotype_counts['00']+haplotype_counts['10'])/total
+        count_dict['PAB'] = (haplotype_counts['00'])/total
+
+        return count_dict
+
+    def count_PA_PB_PAB_japanese(haplotype_counts):
+        '''
+        Function obtains the PA, PB, PAB allele frequencies needed for r^2 and D' calculations
+        In this case, I'm dividing the frequencies by the total individuals in the population
+        The British population we used had 105 individuals, so 210 alleles
+        '''
+        count_dict = {'PA': 0, 'PB': 0, 'PAB': 0}
+        total = 210 # will need to update this, different for each population. 
+        count_dict['PA'] = (haplotype_counts['00']+haplotype_counts['01'])/total
+        count_dict['PB'] = (haplotype_counts['00']+haplotype_counts['10'])/total
+        count_dict['PAB'] = (haplotype_counts['00'])/total
+
+        return count_dict
+
     # printing PA, PB, PBA
-    british_loci_frequencies = count_PA_PB_PAB(british_haplotypes_count)
+    british_loci_frequencies = count_PA_PB_PAB_british(british_haplotypes_count)
     #print('british allele loci frequencies:', british_loci_frequencies)
 
-    nigerian_loci_frequencies = count_PA_PB_PAB(nigerian_haplotypes_count)
+    nigerian_loci_frequencies = count_PA_PB_PAB_nigerian(nigerian_haplotypes_count)
     #print('nigerian allele loci frequencies:', nigerian_loci_frequencies)
 
-    japanese_loci_frequencies = count_PA_PB_PAB(japanese_haplotypes_count)
+    japanese_loci_frequencies = count_PA_PB_PAB_japanese(japanese_haplotypes_count)
     #print('japanese allele loci frequencies:', japanese_loci_frequencies)
 
 
