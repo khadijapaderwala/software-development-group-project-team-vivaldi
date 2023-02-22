@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import itertools
 
-
-def LDheatmap(ld, labels):
+def LDheatmap(values, labels):
     '''
     Plot of a Linkage Disequilibrium (LD) matrix
-    inputs:
-    :param ld: A symmetric LD matrix. The top right corner of the matrix must be filled in this order:
+    inputs: 
+    :param values: a list of values, either r2 or D'.
+    The function then creates a matrix like this:
     [[0.  1   2   3]
     [0.  0.   4   5]
     [0.  0.  0.   6]
@@ -19,6 +19,17 @@ def LDheatmap(ld, labels):
     
     output: a triangle heatmap with the position names, whose size depends on the size of the ld matrix.
     '''
+    # the length of the labels, which dictates the size of the matrix
+    n = len(labels)
+    ld = np.zeros((n, n))
+
+    # assign the values from the list to the appropriate positions in the matrix using a loop
+    index = 0
+    for i in range(n):
+        for j in range(i+1, n):
+            ld[i][j] = values[index]
+            index += 1 
+
     # create the matrix on the size of the input matrix
     n = ld.shape[0]
 
@@ -31,7 +42,7 @@ def LDheatmap(ld, labels):
 
     # Creating a 2x2 transformation matrix to transform the plot 
     t = np.array([[1, 0.5], [-1, 0.5]])
-    # ccreates a coordinate matrix by using itertools.product to generate all possible combinations of row/column indices 
+    # Creates a coordinate matrix by using itertools.product to generate all possible combinations of row/column indices 
     # and transforms the coordinates using the t matrix
     coordinate_matrix = np.dot(np.array([(i[1], i[0]) 
                                 for i in itertools.product(range(n, -1, -1), range(0, n + 1, 1))]), t)
