@@ -65,5 +65,7 @@ def LDheatmap(values, labels):
     plt.xticks(ticks=np.arange(len(labels)) + 0.5, labels=labels, rotation='vertical', fontsize=8)
     # Adding a colourbar 
     plt.colorbar()
+    # Add a title 
+    plt.title(title)
     
     return figure
