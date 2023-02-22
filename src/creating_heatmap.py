@@ -32,6 +32,20 @@ print(results_pairwise_LD)
 british_r2_values = [d['british_r2'] for d in results_pairwise_LD]
 print(british_r2_values)
 
-british_r2_heatmap = LDheatmap(british_r2_values, rsID_list)
+title = 'british_r2_values'
+
+british_r2_heatmap = LDheatmap(british_r2_values, rsID_list, title)
+
+plt.savefig("british_r2.png")
 plt.show()
+
+# print out the file as a txt file for the user
+def write_table_to_file(data):
+    with open('output.txt', 'w', newline='') as f:
+        writer = csv.writer(f, delimiter='\t')
+        writer.writerow(data[0].keys())  # Write the header row
+        for row in data:
+            writer.writerow(row.values()) 
+file = write_table_to_file(results_pairwise_LD)
+print(file)
 
