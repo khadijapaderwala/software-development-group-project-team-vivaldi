@@ -1,7 +1,7 @@
 
 
 from LD_calculation_function import LinkageDisequilibrium 
-from LDheatmap.py import LDheatmap
+from LDheatmap import LDheatmap
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
