@@ -1,0 +1,241 @@
+Function	Genes					
+Autophagy	ATG16L1					
+ Cell Cycle	NUP210					
+ Cell Cycle	PSMB2					
+ Cell Cycle	RMI2					
+Cell-Cell communication	SIRPG					
+Cell-Cell communication	SKAP2					
+Cellular responses to external stimuli	MAPK14					
+Cellular responses to external stimuli	NUP210					
+Cellular responses to external stimuli	PSMB2					
+Cellular responses to external stimuli	RPL37A					
+Cellular responses to external stimuli	RPS26					
+Developmental Biology	COL4A3					
+Developmental Biology	DAG1					
+Developmental Biology	FARP2					
+Developmental Biology	FLI1					
+Developmental Biology	IL6R					
+Developmental Biology	INS					
+Developmental Biology	MAPK14					
+Developmental Biology	POU5F1					
+Developmental Biology	PRKCQ					
+Developmental Biology	PSMB2					
+Developmental Biology	RPL37A					
+Developmental Biology	RPS26					
+Developmental Biology	RPS6KA4					
+Developmental Biology	SMAD2					
+Developmental Biology	SMAD3					
+Developmental Biology	TNF					
+Developmental Biology	UNC5D					
+Disease	ADCY7					
+Disease	CAMK4					
+Disease	DAG1					
+Disease	ERBB3					
+Disease	ERBB4					
+Disease	HLA-A					
+Disease	MAPK14					
+Disease	NOTCH2					
+Disease	NUP210					
+Disease	PGM1					
+Disease	PSMB2					
+Disease	RPL37A					
+Disease	RPS26					
+Disease	SMAD2					
+Disease	SMAD3					
+Disease	TCF7L2					
+DNA Repair	FTO					
+DNA Repair	RAD51B					
+DNA Repair	RMI2					
+DNA Replication	PSMB2					
+Extracellular matrix organization	BMP7					
+Extracellular matrix organization	COL4A3					
+Extracellular matrix organization	DAG1					
+Extracellular matrix organization	ITGB8					
+Extracellular matrix organization	TLL1					
+Gene expression (Transcription)	AGO2					
+Gene expression (Transcription)	CAMK4					
+Gene expression (Transcription)	GATA3					
+Gene expression (Transcription)	IL2RA					
+Gene expression (Transcription)	INS					
+Gene expression (Transcription)	MAPK14					
+Gene expression (Transcription)	NFIB					
+Gene expression (Transcription)	NOTCH2					
+Gene expression (Transcription)	NR4A3					
+Gene expression (Transcription)	NUP210					
+Gene expression (Transcription)	PAX5					
+Gene expression (Transcription)	PRKCQ					
+Gene expression (Transcription)	PSMB2					
+Gene expression (Transcription)	RBFOX1					
+Gene expression (Transcription)	RMI2					
+Gene expression (Transcription)	RPAP2					
+Gene expression (Transcription)	SMAD2					
+Gene expression (Transcription)	SMAD3					
+Gene expression (Transcription)	TCF7L2					
+Hemostasis	DGKH					
+Hemostasis	DGKQ					
+Hemostasis	F13B					
+Hemostasis	GATA3					
+Hemostasis	IGF2					
+Hemostasis	MAPK14					
+Hemostasis	PHACTR2					
+Hemostasis	PRKCQ					
+Hemostasis	RAD51B					
+Hemostasis	RASGRP1					
+Hemostasis	SH2B3					
+Hemostasis	SIRPG					
+Immune System	BTNL2					
+Immune System	CARD9					
+Immune System	CD226					
+Immune System	CFB					
+Immune System	CLEC2D					
+Immune System	COLEC10					
+Immune System	CTSH					
+Immune System	ERAP2					
+Immune System	ERBB3					
+Immune System	ERBB4					
+Immune System	GATA3					
+Immune System	HLA-A					
+Immune System	HLA-B					
+Immune System	HLA-DQA1					
+Immune System	HLA-DQB1					
+Immune System	HLA-DRA					
+Immune System	IFIH1					
+Immune System	IL23R					
+Immune System	IL2RA					
+Immune System	IL2RB					
+Immune System	IL6R					
+Immune System	IL7R					
+Immune System	IRF4					
+Immune System	KLRG1					
+Immune System	LMO7					
+Immune System	MAPK14					
+Immune System	NUP210					
+Immune System	PGM1					
+Immune System	PRKCQ					
+Immune System	PSMB2					
+Immune System	PTPN13					
+Immune System	PTPN2					
+Immune System	PTPN22					
+Immune System	RAB5B					
+Immune System	RASGRP1					
+Immune System	SMAD3					
+Immune System	STAT4					
+Immune System	TAP2					
+Immune System	TNF					
+Immune System	TNFSF15					
+Immune System	TRIM31					
+Immune System	TYK2					
+Metabolism	ACOXL					
+Metabolism	ADCY7					
+Metabolism	AHR					
+Metabolism	FADS1					
+Metabolism	FADS2					
+Metabolism	FUT2					
+Metabolism	HPSE2					
+Metabolism	INPP5B					
+Metabolism	INS					
+Metabolism	NUP210					
+Metabolism	PGM1					
+Metabolism	PI4KA					
+Metabolism	PLEKHA1					
+Metabolism	PRKD2					
+Metabolism	PSMB2					
+Metabolism	PTGES					
+Metabolism	PTPN13					
+Metabolism	RNLS					
+Metabolism	RPL37A					
+Metabolism	RPS26					
+Metabolism	SUOX					
+Metabolism of proteins	CTSH					
+Metabolism of proteins	DAG1					
+Metabolism of proteins	DCAF5					
+Metabolism of proteins	GALNT13					
+Metabolism of proteins	GATA3					
+Metabolism of proteins	HLA-A					
+Metabolism of proteins	IFIH1					
+Metabolism of proteins	IGF2					
+Metabolism of proteins	INS					
+Metabolism of proteins	LMO7					
+Metabolism of proteins	NUP210					
+Metabolism of proteins	PSMB2					
+Metabolism of proteins	RAB5B					
+Metabolism of proteins	RPL37A					
+Metabolism of proteins	RPS26					
+Metabolism of proteins	SMAD2					
+Metabolism of proteins	SMAD3					
+Metabolism of proteins	SNCAIP					
+Metabolism of proteins	TCF7L2					
+Metabolism of proteins	VARS2					
+Metabolism of RNA	MAPK14					
+Metabolism of RNA	NUP210					
+Metabolism of RNA	PSMB2					
+Metabolism of RNA	RPL37A					
+Metabolism of RNA	RPP21					
+Metabolism of RNA	RPS26					
+Metabolism of RNA	THADA					
+Muscle contraction	KCNQ1					
+Muscle contraction	SORBS1					
+Muscle contraction	TRDN					
+Neuronal System	ADCY7					
+Neuronal System	CAMK4					
+Neuronal System	ERBB4					
+Neuronal System	GABRA2					
+Neuronal System	GLRA3					
+Neuronal System	KCNB2					
+Neuronal System	KCNQ1					
+Neuronal System	KIF17					
+Neuronal System	MAPT					
+Neuronal System	SLC1A2					
+Organelle biogenesis and maintenance	CAMK4					
+Organelle biogenesis and maintenance	KIF17					
+Organelle biogenesis and maintenance	MAPK14					
+Organelle biogenesis and maintenance	SEPT2					
+Programmed Cell Death	MAPT					
+Programmed Cell Death	PRKCQ					
+Programmed Cell Death	PSMB2					
+Reproduction	ADAM30					
+Signal Transduction	ADCY7					
+Signal Transduction	AGO2					
+Signal Transduction	CAMK4					
+Signal Transduction	COL4A3					
+Signal Transduction	DGKH					
+Signal Transduction	DGKQ					
+Signal Transduction	ERBB3					
+Signal Transduction	ERBB4					
+Signal Transduction	GATA3					
+Signal Transduction	GPR35					
+Signal Transduction	GRK3					
+Signal Transduction	HECW1					
+Signal Transduction	IGF2					
+Signal Transduction	IKZF1					
+Signal Transduction	IL2RA					
+Signal Transduction	IL2RB					
+Signal Transduction	IL6R					
+Signal Transduction	INPP5B					
+Signal Transduction	INS					
+Signal Transduction	LPAR3					
+Signal Transduction	LRRK2					
+Signal Transduction	MAPK14					
+Signal Transduction	NOTCH2					
+Signal Transduction	PRKCQ					
+Signal Transduction	PSMB2					
+Signal Transduction	PTGFR					
+Signal Transduction	PTPN2					
+Signal Transduction	RASGRP1					
+Signal Transduction	SH2B3					
+Signal Transduction	SMAD2					
+Signal Transduction	SMAD3					
+Signal Transduction	TCF7L2					
+Signal Transduction	TNF					
+Signal Transduction	TYK2					
+Transport of small molecules	ADCY7					
+Transport of small molecules	PSMB2					
+Transport of small molecules	SLC1A2					
+Transport of small molecules	SLC4A10					
+Transport of small molecules	TRDN					
+Vesicle-mediated transport	FNBP1					
+Vesicle-mediated transport	GRK3					
+Vesicle-mediated transport	IL7R					
+Vesicle-mediated transport	INS					
+Vesicle-mediated transport	M6PR					
+Vesicle-mediated transport	RAB5B					

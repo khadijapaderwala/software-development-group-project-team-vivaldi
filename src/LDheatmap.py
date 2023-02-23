@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import itertools
 
-def LDheatmap(values, labels):
+def LDheatmap(values, labels, title):
     '''
     Plot of a Linkage Disequilibrium (LD) matrix
     inputs: 
