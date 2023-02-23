@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Output File</title>
+  </head>
+  <body>
+    <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+    <p>Click the link below to view the output file:</p><a href={{url_for('static', filename='output.txt')}} target="_blank">View Output File</a>
+    <p>
+      <img src="{{url_for('static', filename='british_r2.png')}}" align="middle" />
+      <img src="{{url_for('static', filename='british_dprime.png')}}" align="middle" />
+      <img src="{{url_for('static', filename='japanese_r2.png')}}" align="middle" />
+      <img src="{{url_for('static', filename='japanese_dprime.png')}}" align="middle" />
+      <img src="{{url_for('static', filename='nigerian_r2.png')}}" align="middle" />
+      <img src="{{url_for('static', filename='nigerian_dprime.png')}}" align="middle" />
+    </p>
+  </body>
+</html>

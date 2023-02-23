@@ -4,7 +4,7 @@
 {% block styles %}
 {{ super() }}
 	<style>
-		body { background: #e8f1f9; }
+		body { background: #8cffd9; }
 	</style>
 {% endblock %}
 
@@ -23,7 +23,6 @@ SNP: {{ id }}
       <!-- note, the id is not used in the template -->
 
       <h1 class="pt-5 pb-2">{{ id }}</h1>
-      <p>Functional Terms: {{ func }}</p>
 
       <p><a href="{{ url_for('index') }}">Return to search page</a></p>
 
@@ -46,7 +45,8 @@ SNP: {{ id }}
                 <th>ESN_ALT</th>
                 <th>CADD</th>
                 <th>P Value</th>
-              
+                <th>Mapped Genes</th>
+                <th>Functional</th>
             </tr>
 
             <!-- here is a for-loop to give us all the SNPS -->
@@ -64,6 +64,8 @@ SNP: {{ id }}
                 <td>{{ row[10] }}</td>
                 <td>{{ row[11] }}</td>
                 <td>{{ row[12] }}</td>
+                <td>{{ row[13] }}</td>
+                <td>{{ row[14] }}</td>
             </tr>
             {% endfor %}
         </table>
