@@ -15,18 +15,28 @@ rsID_list = ['rs1050979', 'rs9405661', 'rs13217044', 'rs12203596']
 results_pairwise_LD = []
 
 # Loop over every possible pair of strings
-for i in range(len(rsID_list)):
-    print(i)
-    for j in range(i+1, len(rsID_list)):
-        print(j)
-        rsID_1 = rsID_list[i]
-        rsID_2 = rsID_list[j]
-        # Call your function with the two strings
-        result = LinkageDisequilibrium(rsID_1, rsID_2)
-        results_pairwise_LD.append(result)
-# This creates the list of dictionaries with ALL the LD values and calculations
+
+
+def LD(rsID_list):
+    for i in range(len(rsID_list)):
+        for j in range(i+1, len(rsID_list)):
+            print(j)
+            rsID_1 = rsID_list[i]
+            rsID_2 = rsID_list[j]
+            # Call your function with the two strings
+            result = LinkageDisequilibrium(rsID_1, rsID_2)
+            results_pairwise_LD.append(result)
+    # This creates the list of dictionaries with ALL the LD values and calculations
+    return results_pairwise_LD
+    '''with open('output.txt', 'w', newline='') as f:
+                writer = csv.writer(f, delimiter='\t')
+                writer.writerow(results_pairwise_LD[0].keys())  # Write the header row
+                for row in results_pairwise_LD:
+                    writer.writerow(row.values())'''
 print(results_pairwise_LD)
 
+test = LD(rsID_list)
+print(test)
 
 # print out the file as a txt file for the user
 def write_table_to_file(data):
@@ -35,19 +45,19 @@ def write_table_to_file(data):
         writer.writerow(data[0].keys())  # Write the header row
         for row in data:
             writer.writerow(row.values()) 
-file = write_table_to_file(results_pairwise_LD)
+file = write_table_to_file(test)
 print(file)
 
 
 
 
-####### ALL THE NECESSERY OUTPUTS FOR THE HEATMAPS. 
-# BRITISH R2, NIGERIAN R2, JAPANESE R2
-# BRITISH D', NIGERIAN D', JAPANESE D' 
-#  
-# extracting information from the list of dictionaries 
-# this obtains the r2 values list
-british_r2_values = [d['british_r2'] for d in results_pairwise_LD]
+    ####### ALL THE NECESSERY OUTPUTS FOR THE HEATMAPS. 
+    # BRITISH R2, NIGERIAN R2, JAPANESE R2
+    # BRITISH D', NIGERIAN D', JAPANESE D' 
+    #  
+    # extracting information from the list of dictionaries 
+    # this obtains the r2 values list
+'''british_r2_values = [d['british_r2'] for d in results_pairwise_LD]
 print(british_r2_values)
 
 nigerian_r2_values = [d['nigerian_r2'] for d in results_pairwise_LD]
@@ -99,6 +109,6 @@ plt.savefig("nigerian_dprime.png")
 
 ### JAPANESE DPRIME HEATMAP
 japanese_dprime_heatmap = LDheatmap(japanese_dprime_values, rsID_list, japanese_dprime_title)
-plt.savefig("japanese_dprime.png")
+plt.savefig("japanese_dprime.png")'''
 
 

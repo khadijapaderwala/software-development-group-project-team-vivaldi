@@ -7,7 +7,7 @@ import sqlite3
 import re
 from src.manhattan_plot import manhattan_plot
 import pandas as pd
-from src.creating_heatmap import LD, write_table_to_file 
+from src.creating_heatmap import LD, write_table_to_file, heatmap 
 
 app = Flask(__name__)
 
@@ -95,8 +95,7 @@ def SNPs(id):
                     INNER JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
                     JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID
                     WHERE SNP.id=?
-                    GROUP BY SNP.id
-                    AND GENE.id""", [id])
+                    GROUP BY Gene.id""", [id])
         rows = cur.fetchall()
         print(rows)
         conn.close()
@@ -131,7 +130,8 @@ def Region_range(chr_n, chr_p1, chr_p2):
         JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID
         WHERE CHR_N=? 
         AND CHR_P BETWEEN ? and ?
-        GROUP BY SNP.id;""", (chr_n, chr_p1, chr_p2))
+        GROUP BY SNP.id, Gene.id
+        ORDER BY CHR_P;""", (chr_n, chr_p1, chr_p2))
         rows = cur.fetchall()
         conn.close()
         form = NameForm()
@@ -140,6 +140,7 @@ def Region_range(chr_n, chr_p1, chr_p2):
             list_id = id.split(", ")
             print(list_id)
             data = LD(list_id)
+            heat = heatmap(data, list_id)
             write_table_to_file(data)
             return redirect(url_for('txtfile'))
 
