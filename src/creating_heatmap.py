@@ -1,15 +1,13 @@
-# script that will take from the user the list of rs IDs. 
+# This script will take from the user the list of rs IDs. 
 # It will then calculate the LD for all pairs of SNPs, and create a heatmap for each population separately, 
 # and for r2 and D' separately.
+# then the table of results will be saved as a txt file.
 
 from src.LD_calculation_function import LinkageDisequilibrium 
 from src.LDheatmap import LDheatmap
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
-
-# from the html page, the code would somehow create a list 
-# and I can link to it from here, obtain the list 
 
 # simulating a list of rsIDs chosen by the user
 #rsID_list = ['rs1050979', 'rs9405661', 'rs13217044', 'rs12203596']
