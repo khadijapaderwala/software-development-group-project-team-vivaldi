@@ -25,8 +25,11 @@ def LD(rsID_list):
             # Call your function with the two strings
             result = LinkageDisequilibrium(rsID_1, rsID_2)
             results_pairwise_LD.append(result)
+    # This creates the list of dictionaries with ALL the LD values and calculations
+    return results_pairwise_LD
 
-            ####### ALL THE NECESSERY OUTPUTS FOR THE HEATMAPS. 
+def heatmap(results_pairwise_LD, rsID_list):
+    ####### ALL THE NECESSERY OUTPUTS FOR THE HEATMAPS. 
             # BRITISH R2, NIGERIAN R2, JAPANESE R2
             # BRITISH D', NIGERIAN D', JAPANESE D' 
             #  
@@ -71,8 +74,6 @@ def LD(rsID_list):
             ### JAPANESE DPRIME HEATMAP
             japanese_dprime_heatmap = LDheatmap(japanese_dprime_values, rsID_list, japanese_dprime_title)
             plt.savefig("static/japanese_dprime.png")
-    # This creates the list of dictionaries with ALL the LD values and calculations
-    return results_pairwise_LD
 
 
 # print out the file as a txt file for the user
