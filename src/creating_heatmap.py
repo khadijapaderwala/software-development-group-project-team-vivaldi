@@ -13,14 +13,20 @@ import csv
 #rsID_list = ['rs1050979', 'rs9405661', 'rs13217044', 'rs12203596']
 
 
-# Loop over every possible pair of strings
+# Loop over every possible pair of rs IDs 
 def LD(rsID_list):
+    ''' Function that takes the list of rsIDs from the user,
+    Calculates the LD for each pair of rsIDs, creates a heatmap for r2 and D' measure of each population
+    (British, Nigerian, Japanese)
+    Input: a list of rsIDs. 
+    Output: results of pairwise LD from list of rsIDs. Heatmaps for r2 and D' of each population (6 in total).
+    '''
     results_pairwise_LD = []
     for i in range(len(rsID_list)):
         for j in range(i+1, len(rsID_list)):
             rsID_1 = rsID_list[i]
             rsID_2 = rsID_list[j]
-            # Call your function with the two strings
+            # Call your function with two of the rs IDs
             result = LinkageDisequilibrium(rsID_1, rsID_2)
             results_pairwise_LD.append(result)
 
@@ -29,10 +35,11 @@ def LD(rsID_list):
             # BRITISH D', NIGERIAN D', JAPANESE D' 
             #  
             # extracting information from the list of dictionaries 
-            # this obtains the r2 values list
+            # obtaining the r2 values list for each population
             british_r2_values = [d['british_r2'] for d in results_pairwise_LD]
             nigerian_r2_values = [d['nigerian_r2'] for d in results_pairwise_LD]
             japanese_r2_values = [d['japanese_r2'] for d in results_pairwise_LD]
+            # obtaining the D' values list for each population
             british_dprime_values = [d['british_Dprime'] for d in results_pairwise_LD]
             nigerian_dprime_values = [d['nigerian_Dprime'] for d in results_pairwise_LD]
             japanese_dprime_values = [d['japanese_Dprime'] for d in results_pairwise_LD]
@@ -69,7 +76,7 @@ def LD(rsID_list):
             ### JAPANESE DPRIME HEATMAP
             japanese_dprime_heatmap = LDheatmap(japanese_dprime_values, rsID_list, japanese_dprime_title)
             plt.savefig("static/japanese_dprime.png")
-    # This creates the list of dictionaries with ALL the LD values and calculations
+    # This creates the list of dictionaries with ALL the LD values and calculations, from each pairwise calculation
     return results_pairwise_LD
 
 
