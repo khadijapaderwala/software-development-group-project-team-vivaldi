@@ -9,18 +9,25 @@ from src.manhattan_plot import manhattan_plot
 import pandas as pd
 from src.creating_heatmap import LD, write_table_to_file, heatmap 
 
+
 app = Flask(__name__)
 
 ### Creating a search bar
 # Flask-WTF requires an encryption key - the string can be anything
 app.config['SECRET_KEY'] = 'vns66SX6SF6fa6FFHCB83SLAYALLDAY'
-
 # Flask-Bootstrap requires this line
 Bootstrap(app)
+
 
 class NameForm(FlaskForm):
     id = StringField('Please enter', validators=[DataRequired()])
     submit = SubmitField('Submit')
+    
+class LDForm(FlaskForm):
+    ld = StringField('To calculate linkage disequilibrium, please enter (at least two) rs IDs separated by a comma.')
+    search= SubmitField('Calculate')
+    
+    
 
 @app.route('/', methods=['GET', 'POST']) #in addition to reading you also want to post from search bar
 def index():
@@ -75,7 +82,7 @@ def index():
         return render_template('index.html', form=form, message=message)
 
    
-@app.route('/SNPs/<id>')
+@app.route('/SNPs/<id>', methods=['GET', 'POST'])
 def SNPs(id):
     try:
         conn = sqlite3.connect('Database/Database.db') #connect to database
@@ -99,9 +106,20 @@ def SNPs(id):
         rows = cur.fetchall()
         print(rows)
         conn.close()
+        
+        form = LDForm()
+        if form.validate_on_submit():
+            ld = form.ld.data
+            list_ld = ld.split(", ")
+            print(list_ld)
+            data = LD(list_ld)
+            heat = heatmap(data, list_ld)
+            write_table_to_file(data)
+            return redirect(url_for('txtfile'))
+        
         if len(rows) == 0:
             return render_template('404.html', id=id) ### if there are no results, 404 page will be rendered
-        return render_template('SNP.html', id=id, rows=rows)
+        return render_template('SNP.html', id=id, rows=rows, form=form)
     except Exception as e:
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
@@ -134,13 +152,14 @@ def Region_range(chr_n, chr_p1, chr_p2):
         ORDER BY CHR_P;""", (chr_n, chr_p1, chr_p2))
         rows = cur.fetchall()
         conn.close()
-        form = NameForm()
+        
+        form = LDForm()
         if form.validate_on_submit():
-            id = form.id.data
-            list_id = id.split(", ")
-            print(list_id)
-            data = LD(list_id)
-            heat = heatmap(data, list_id)
+            ld = form.ld.data
+            list_ld = ld.split(", ")
+            print(list_ld)
+            data = LD(list_ld)
+            heat = heatmap(data, list_ld)
             write_table_to_file(data)
             return redirect(url_for('txtfile'))
 
@@ -193,21 +212,31 @@ def Region_single(chr_n, chr_p1):
         GROUP BY SNP.id;""", (chr_n, chr_p1))
         rows = cur.fetchall()
         conn.close()
-        #select = request.form.get(row[0])
+        
+        form = LDForm()
+        if form.validate_on_submit():
+            ld = form.ld.data
+            list_ld = ld.split(", ")
+            print(list_ld)
+            data = LD(list_ld)
+            heat = heatmap(data, list_ld)
+            write_table_to_file(data)
+            return redirect(url_for('txtfile'))
+        
         if len(rows) == 0:
             return render_template('404.html', id=id)
         else:
             if request.method == 'POST':
                 print(request.form.getlist('LD'))
                 return 'Done'
-        return render_template('Region.html', rows=rows, chr_n=chr_n, chr_p1=chr_p1) #str(select)
+        return render_template('region_single.html', rows=rows, chr_n=chr_n, chr_p1=chr_p1, form=form) #str(select)
     except Exception as e:
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
         hed = '<h1>Something is broken.</h1>'
         return hed + error_text
 
-@app.route('/Gene/<id>')
+@app.route('/Gene/<id>', methods=['GET', 'POST'])
 def Gene(id):
     try:
         conn = sqlite3.connect('Database/Database.db') #connect to database
@@ -236,16 +265,19 @@ def Gene(id):
         conn.close()
         
         ### for selecting multiple RS for LD
-        form = NameForm()
+        form = LDForm()
         if form.validate_on_submit():
-            id = form.id.data
-            list_id = id.split(", ")
-            data = LD(list_id)
+            ld = form.ld.data
+            list_ld = ld.split(", ")
+            print(list_ld)
+            data = LD(list_ld)
+            heat = heatmap(data, list_ld)
             write_table_to_file(data)
             return redirect(url_for('txtfile'))
+        
         if len(rows) == 0:
             return render_template('404.html', id=id) ### if there are no results, 404 page will be rendered
-        return render_template('Gene.html', id=id, rows=rows, func=func)
+        return render_template('Gene.html', id=id, rows=rows, func=func, form=form)
     except Exception as e:
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
