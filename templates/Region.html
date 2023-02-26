@@ -22,7 +22,7 @@ Region: {{ chr_n }}
 
       <!-- note, the id is not used in the template -->
 
-      <h1 class="pt-5 pb-2">Chromsome {{ chr_n }}:{{ chr_p1 }} </h1> 
+      <h1 class="pt-5 pb-2">Chromsome {{ chr_n }}:{{ chr_p1 }}-{{ chr_p2 }} </h1> 
       <p><a {{ chr_p2 }} </a></p>
 
       <p><a href="{{ url_for('index') }}">Return to search page</a></p>
@@ -37,17 +37,17 @@ Region: {{ chr_n }}
       <img src="{{url_for('static', filename='manhattan_plot.png')}}" align="middle" />
         <table class="table">
             <tr>
-                <th>Select for LD</th>
+        
                 <th>rs ID</th>
                 <th>Location</th>
                 <th>Reference Allele</th>
-                <th>Other Allele</th>
-                <th>GBR_REF</th>
-                <th>GBR_ALT</th>
-                <th>JPT_REF</th>
-                <th>JPT_ALT</th>
-                <th>ESN_REF</th>
-                <th>ESN_ALT</th>
+                <th>Alternate Allele</th>
+                <th>GBR_REF Allele Frequency</th>
+                <th>GBR_ALT Allele Frequency</th>
+                <th>JPT_REF Allele Frequency</th>
+                <th>JPT_ALT Allele Frequency</th>
+                <th>ESN_REF Allele Frequency</th>
+                <th>ESN_ALT Allele Frequency</th>
                 <th>CADD</th>
                 <th>P Value</th>
                 <th>Mapped Genes</th>
@@ -64,7 +64,7 @@ Region: {{ chr_n }}
                 <td>{{ row[5] }}</td>
                 <td>{{ row[6] }}</td>
                 <td>{{ row[7] }}</td>
-                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
                 <td>{{ row[9] }}</td>
                 <td>{{ row[10] }}</td>
                 <td>{{ row[11] }}</td>
