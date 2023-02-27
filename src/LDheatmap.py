@@ -1,4 +1,4 @@
-# file for the function that creates the heatmaps. 
+# File for the function that creates the heatmaps for D' and r^2 measures of LD. 
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -7,8 +7,8 @@ import itertools
 def LDheatmap(values, labels, title):
     '''
     Plot of a Linkage Disequilibrium (LD) matrix
-    inputs: 
-    :param values: a list of values, either r2 or D'.
+    Inputs: 
+    :param values: a list of values, of either r2 or D'.
     The function then creates a matrix like this:
     [[0.  1   2   3]
     [0.  0.   4   5]
@@ -16,21 +16,23 @@ def LDheatmap(values, labels, title):
     [0.  0.  0.  0. ]]
     Where the 0s are, they won't show on the heatmap as they are masked. 
     :param labels: A list of position names, such as rsIDs. 
+    :param title: A string for the title of the heatmap.
     
     output: a triangle heatmap with the position names, whose size depends on the size of the ld matrix.
     '''
-    # the length of the labels, which dictates the size of the matrix
+    
+    # The size of the matrix is dictated by the length of the labels. A matrix of 0s is created.
     n = len(labels)
     ld = np.zeros((n, n))
 
-    # assign the values from the list to the appropriate positions in the matrix using a loop
+    # Assign the values to the appropriate positions in the matrix using a loop
     index = 0
     for i in range(n):
         for j in range(i+1, n):
             ld[i][j] = values[index]
             index += 1 
 
-    # create the matrix on the size of the input matrix
+    # Assigning the number of rows in the ld matrix to n
     n = ld.shape[0]
 
     # Initialize the figure for plotting
