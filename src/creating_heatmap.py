@@ -5,7 +5,6 @@
 from src.LD_calculation_function import LinkageDisequilibrium 
 from src.LDheatmap import LDheatmap
 import matplotlib.pyplot as plt
-import numpy as np
 import csv
 
 # A function to loop over every possible pair of strings
