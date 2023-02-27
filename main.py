@@ -1,3 +1,4 @@
+# Imported modules and functions
 from flask import Flask, render_template, request, url_for, redirect
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -10,55 +11,65 @@ import pandas as pd
 from src.creating_heatmap import LD, write_table_to_file, heatmap 
 
 
+# Creates instance of flask application and assigns it to 'app'
 app = Flask(__name__)
 
-### Creating a search bar
+
 # Flask-WTF requires an encryption key - the string can be anything
 app.config['SECRET_KEY'] = 'vns66SX6SF6fa6FFHCB83SLAYALLDAY'
+
 # Flask-Bootstrap requires this line
 Bootstrap(app)
 
-
+# Creates search bar on index page
 class NameForm(FlaskForm):
     id = StringField('Please enter', validators=[DataRequired()])
     submit = SubmitField('Submit')
-    
+
+# Creates search bar on the output pages
 class LDForm(FlaskForm):
     ld = StringField('To calculate linkage disequilibrium, please enter (at least two) rs IDs separated by a comma.')
     search= SubmitField('Calculate')
     
     
-
-@app.route('/', methods=['GET', 'POST']) #in addition to reading you also want to post from search bar
+# Route to index page
+@app.route('/', methods=['GET', 'POST']) # GET sends a webpage back, POST sends data entered to server
 def index():
-    # you must tell the variable 'form' what you named the class, above
-    # 'form' is the variable name used in this template: index.html
-    form = NameForm()
+    form = NameForm() # Assigns class to variable form
     message = ""
     error_msg= """Hey, looks like you're searching something wild. 
-                    If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:[coordinate]'.
+                    If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:                         [coordinate]'.
                     Otherwise, it ain't in the database."""
     try:
+        # If user searches through rs ID by entering 'rs' as the first 2 letters
         if form.validate_on_submit():
             id = form.id.data
             if id[:2] == 'rs':
-                # empty the form field
-                form.id.data = ""
-                # redirect the browser to another route and template
+                form.id.data = "" # Empty Field
+                # Redirect the browser to SNPs route
                 return redirect( url_for('SNPs', id=id) )
+            
+            
+             # If user search through genomic position or genomic region by entering 'chr' as the first 3 letters
             elif id[:3] == 'chr':
                 if id.find('-') != -1 and id.find(':') != -1:
-                    # match only  searches only from the beginning of the string and return match object if found. But if a match of substring is found somewhere in the middle of the string, it returns none. 
+                   # If id has a '-'
+                    # Search id for characters starting with chr and ending in ':'
+                    # .group(1) code calls on the characters between 'chr' and ':'
                     chr_n = (re.match('chr(.*):', id)).group(1)
-                    # search searches for the whole string even if the string contains multi-lines and tries to find a match of the substring in all the lines of string.
+                     # chr_p1 searches the position before the '-' and chr_p2 searches the position after the '-'
                     chr_p1 = (re.search(':(.*)-', id)).group(1)
                     chr_p2 = (re.search('-(.*)', id)).group(1)
                     form.id.data = ""
+                    # If not found then return error message, else return the route for Region_range
                     if chr_n == '' or chr_p1 == '':
                         message = error_msg
                     else:
                         return redirect( url_for('Region_range', chr_n=chr_n, chr_p1=chr_p1, chr_p2=chr_p2) )
+                    
+                    
                 else:
+                    # If user searches with 'chr' but id doesnt have an '-', route for Region_single is returned
                     chr_n = (re.match('chr(.*):', id)).group(1)
                     chr_p1 = (re.search(':(.*)', id)).group(1)
                     form.id.data = ""
@@ -66,13 +77,15 @@ def index():
                         message = error_msg
                     else:
                         return redirect( url_for('Region_single', chr_n=chr_n, chr_p1=chr_p1) )
+                    
+                    
             else:
-                conn = sqlite3.connect('Database/Database.db') #connect to database
+                conn = sqlite3.connect('Database/Database.db') # Connect to database
                 cur = conn.cursor()
-                id = id.upper()
-                cur.execute("SELECT id FROM Gene WHERE id=?", [id])
+                id = id.upper() # Convert to uppercase
+                cur.execute("SELECT id FROM Gene WHERE id=?", [id]) # Search in the Gene table in database
                 rows = cur.fetchall()
-                if len(rows) == 0:
+                if len(rows) == 0: # If there is no match, return error message, else return route for Gene
                     message = error_msg
                 else:
                     return redirect(url_for('Gene', id=id))
@@ -80,13 +93,16 @@ def index():
     except Exception:
         message = error_msg
         return render_template('index.html', form=form, message=message)
+    
 
-   
+# Route for SNPs   
 @app.route('/SNPs/<id>', methods=['GET', 'POST'])
 def SNPs(id):
     try:
-        conn = sqlite3.connect('Database/Database.db') #connect to database
+        conn = sqlite3.connect('Database/Database.db') # Connect to database
         cur = conn.cursor()
+        # Specifies column names from various tables and links tables together
+        # WHERE SNP.id=? - specifies the condition that filters the rows 
         cur.execute("""SELECT SNP.id, 
                     CHR_N, CHR_P,
                     REF_ALLELE, ALT_ALLELE,
@@ -107,32 +123,36 @@ def SNPs(id):
         print(rows)
         conn.close()
         
+        #LD search bar on the SNP output page
         form = LDForm()
         if form.validate_on_submit():
             ld = form.ld.data
-            list_ld = ld.split(", ")
+            list_ld = ld.split(", ") # rs ids are split with a comma and put into a list
             print(list_ld)
             data = LD(list_ld)
-            heat = heatmap(data, list_ld)
+            heat = heatmap(data, list_ld) # Using imported heat function to make a heatmap
             write_table_to_file(data)
-            return redirect(url_for('txtfile'))
+            return redirect(url_for('txtfile')) # Return route for txtfile
         
         if len(rows) == 0:
-            return render_template('404.html', id=id) ### if there are no results, 404 page will be rendered
-        return render_template('SNP.html', id=id, rows=rows, form=form)
-    except Exception as e:
+            return render_template('404.html', id=id) # If there are no results, 404 page will be rendered
+        return render_template('SNP.html', id=id, rows=rows, form=form) # If there are results, SNP.html template will be returned
+    except Exception as e: # Error handling
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
         hed = '<h1>Something is broken.</h1>'
         return hed + error_text
-
+    
+    
+#Route for Region_range
 @app.route('/Region/<chr_n>/<chr_p1>-<chr_p2>', methods=['GET', 'POST'])
 def Region_range(chr_n, chr_p1, chr_p2):
     try:
-        conn = sqlite3.connect('Database/Database.db')
+        conn = sqlite3.connect('Database/Database.db') # Connect to database
         cur = conn.cursor()
-        #### check select statement particularly joining through snp_gene
-        cur.execute("""SELECT SNP.id, 
+        # Specifies column names from various tables and links tables together
+        # WHERE CHR_N=? - specifies the condition that filters the rows
+        cur.execute("""SELECT SNP.id,  
         CHR_N, CHR_P,
         REF_ALLELE, ALT_ALLELE,
         GBR_REF_FREQ, GBR_ALT_FREQ,
@@ -153,19 +173,21 @@ def Region_range(chr_n, chr_p1, chr_p2):
         rows = cur.fetchall()
         conn.close()
         
+        # LD search bar on the Region_range output page
         form = LDForm()
         if form.validate_on_submit():
             ld = form.ld.data
-            list_ld = ld.split(", ")
+            list_ld = ld.split(", ") # rs ids are split with a comma and put into a list
             print(list_ld)
             data = LD(list_ld)
-            heat = heatmap(data, list_ld)
+            heat = heatmap(data, list_ld) # Using imported heat function to make a heatmap
             write_table_to_file(data)
-            return redirect(url_for('txtfile'))
+            return redirect(url_for('txtfile'))  # Return route for txtfile
 
-        #select = request.form.get(row[0])
+        # If there are no results, the 404.html template will be rendered
         if len(rows) == 0:
             return render_template('404.html', id=id)
+        # If variable rows isnt empty then manhattan plot is created and the Region.html template is returned
         else:
             #Create data frame for manhattan plot function
             rs_id = []
@@ -179,20 +201,23 @@ def Region_range(chr_n, chr_p1, chr_p2):
                 g_chron.append
             m_plots = {'CHR_POS':g_pos, 'P-VALUE':p_value}
             df = pd.DataFrame(m_plots)
+            # Imported function
             manhattan_plot(df, chr_n)
-        return render_template('Region.html', rows=rows, chr_n=chr_n, chr_p1=chr_p1, chr_p2=chr_p2, form=form) #str(select)
+        return render_template('Region.html', rows=rows, chr_n=chr_n, chr_p1=chr_p1, chr_p2=chr_p2, form=form) 
     except Exception as e:
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
         hed = '<h1>Something is broken.</h1>'
         return hed + error_text
-    
+
+# Route for Region_single     
 @app.route('/Region/<chr_n>/<chr_p1>', methods=['GET', 'POST'])
 def Region_single(chr_n, chr_p1):
     try:
-        conn = sqlite3.connect('Database/Database.db')
+        conn = sqlite3.connect('Database/Database.db') # Connect to database
         cur = conn.cursor()
-        #### check select statement particularly joining through snp_gene
+        # Specifies column names from various tables and links tables together
+        # WHERE CHR_N=? - specifies the condition that filters the rows
         cur.execute("""SELECT SNP.id, 
         CHR_N, CHR_P,
         REF_ALLELE, ALT_ALLELE,
@@ -213,34 +238,35 @@ def Region_single(chr_n, chr_p1):
         rows = cur.fetchall()
         conn.close()
         
+        # LD search bar on the Region_single output page
         form = LDForm()
         if form.validate_on_submit():
             ld = form.ld.data
-            list_ld = ld.split(", ")
+            list_ld = ld.split(", ") # rs ids are split with a comma and put into a list
             print(list_ld)
             data = LD(list_ld)
-            heat = heatmap(data, list_ld)
+            heat = heatmap(data, list_ld) # Using imported heat function to make a heatmap
             write_table_to_file(data)
-            return redirect(url_for('txtfile'))
+            return redirect(url_for('txtfile')) # Return route for txtfile
         
         if len(rows) == 0:
-            return render_template('404.html', id=id)
-        else:
-            if request.method == 'POST':
-                print(request.form.getlist('LD'))
-                return 'Done'
-        return render_template('region_single.html', rows=rows, chr_n=chr_n, chr_p1=chr_p1, form=form) #str(select)
+            return render_template('404.html', id=id) #If there are no results, 404.html template is rendered, else region_single                                                              template is rendered
+        return render_template('region_single.html', rows=rows, chr_n=chr_n, chr_p1=chr_p1, form=form) 
     except Exception as e:
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
         hed = '<h1>Something is broken.</h1>'
         return hed + error_text
 
+
+#Route for Gene
 @app.route('/Gene/<id>', methods=['GET', 'POST'])
 def Gene(id):
     try:
-        conn = sqlite3.connect('Database/Database.db') #connect to database
+        conn = sqlite3.connect('Database/Database.db') # Connect to database
         cur = conn.cursor()
+        # Specifies column names from various tables and links tables together
+        # WHERE Gene.id=? - specifies the condition that filters the rows
         cur.execute("""SELECT SNP.id, 
         CHR_N, CHR_P,
         REF_ALLELE, ALT_ALLELE,
@@ -255,39 +281,39 @@ def Gene(id):
         INNER JOIN P_Value ON SNP.id = P_value.RS_ID 
         WHERE Gene.id = ?
         GROUP BY SNP.id
-        """, [id]) ###removes duplicate results
+        """, [id]) 
         rows = cur.fetchall()
-
         cur.execute("SELECT FUNCTIONAL FROM Gene LEFT JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID WHERE id = ?", [id])
         func = cur.fetchall()
         print(func)
-
         conn.close()
         
-        ### for selecting multiple RS for LD
+        # LD search bar on Gene output page
         form = LDForm()
         if form.validate_on_submit():
             ld = form.ld.data
-            list_ld = ld.split(", ")
+            list_ld = ld.split(", ") # rs IDs split by a comma and put into a list
             print(list_ld)
             data = LD(list_ld)
-            heat = heatmap(data, list_ld)
+            heat = heatmap(data, list_ld) # Imported heat function to create a heatmap
             write_table_to_file(data)
-            return redirect(url_for('txtfile'))
+            return redirect(url_for('txtfile')) # Route for txtfile returned
         
         if len(rows) == 0:
-            return render_template('404.html', id=id) ### if there are no results, 404 page will be rendered
-        return render_template('Gene.html', id=id, rows=rows, func=func, form=form)
+            return render_template('404.html', id=id) # If there are no results, 404 page will be rendered
+        return render_template('Gene.html', id=id, rows=rows, func=func, form=form) # Otherwsie Gene.html rendered
     except Exception as e:
         # e holds description of the error
         error_text = "<p>The error:<br>" + str(e) + "</p>"
         hed = '<h1>Something is broken.</h1>'
         return hed + error_text
 
+#Route for LD calculations
 @app.route('/LD')
 def txtfile():
-    return render_template('LD.html')
+    return render_template('LD.html') # LD.html rendered
         
 
+# Run the application in debug mode
 if (__name__ == "__main__"):
     app.run(debug=True)
