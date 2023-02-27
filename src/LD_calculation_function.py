@@ -34,8 +34,7 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         british_chr6[key] = values
 
     # closing connection
-    british_conn.close()
-    #print(british_chr6)    
+    british_conn.close()    
 
     
     ### NIGERIAN population data collection for the specified rs IDs ###
@@ -54,8 +53,7 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         nigerian_chr6[key] = values
 
     # closing connection
-    nigerian_conn.close()
-    #print(nigerian_chr6) 
+    nigerian_conn.close() 
 
 
     ### JAPANESE population data collection for the specified rs IDs ###
@@ -74,8 +72,7 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         japanese_chr6[key] = values
 
     # closing connection
-    japanese_conn.close()
-    #print(japanese_chr6) 
+    japanese_conn.close() 
 
     
 
@@ -85,21 +82,15 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
     
     # assigning the list of genotypes of the two rsIDs, for the BRITISH population
     british_genotype_list_1 = british_chr6[rs_ID1]
-    #print('british genotype1:', british_genotype_list_1)
     british_genotype_list_2 = british_chr6[rsID_2]
-    #print('british genotype2:', british_genotype_list_2)
 
      # assigning the list of genotypes of the two rsIDs, for the NIGERIAN population
     nigerian_genotype_list_1 = nigerian_chr6[rs_ID1]
-    #print('nigerian genotype1:', nigerian_genotype_list_1)
     nigerian_genotype_list_2 = nigerian_chr6[rsID_2]
-    #print('nigerian genotype2:', nigerian_genotype_list_2)
 
     # assigning the list of genotypes of the two rsIDs, for the JAPANESE population
     japanese_genotype_list_1 = japanese_chr6[rs_ID1]
-    #print('japanese genotype1:', japanese_genotype_list_1)
     japanese_genotype_list_2 = japanese_chr6[rsID_2]
-    #print('japanese genotype2:', japanese_genotype_list_2)
 
     
     ##########
@@ -141,13 +132,9 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
 
     # printing out the haplotype counts from the queried rsID1 and rsID2
     british_haplotypes = determine_haplotype(british_genotype_list_1, british_genotype_list_2)
-    #print('british haplotypes:', british_haplotypes)
-
     nigerian_haplotypes = determine_haplotype(nigerian_genotype_list_1, nigerian_genotype_list_2)
-    #print('nigerian haplotyes:', nigerian_haplotypes)
-
     japanese_haplotypes = determine_haplotype(japanese_genotype_list_1, japanese_genotype_list_2)
-    #print('japanese haplotyes:', japanese_haplotypes)
+
 
     ##########
     # STEP 3
@@ -155,7 +142,7 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
     # counting the haplotypes 
     def count_haplotypes(compare_genotypes):
         '''Function counts how many of each haplotype exist
-        The 00 is PA PB alleles (so reference reference for each rsID)
+        The 00 is PA PB alleles (so reference, reference for each rsID)
         01 is PA Pb alleles
         10 is Pa PB alleles
         11 is Pa Pb alleles
@@ -167,13 +154,8 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         return count_dict
 
     british_haplotypes_count = count_haplotypes(british_haplotypes)
-    #print('british haplotype counts:', british_haplotypes_count)
-
     nigerian_haplotypes_count = count_haplotypes(nigerian_haplotypes)
-    #print('nigerian haplotype counts:', nigerian_haplotypes_count)
-
     japanese_haplotypes_count = count_haplotypes(japanese_haplotypes)
-    #print('japanese haplotype counts:', japanese_haplotypes_count)
 
 
     ##########
@@ -187,7 +169,7 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         The British population we used had 100 individuals, so 200 alleles
         '''
         count_dict = {'PA': 0, 'PB': 0, 'PAB': 0}
-        total = 200 # will need to update this, different for each population. 
+        total = 200 
         count_dict['PA'] = (haplotype_counts['00']+haplotype_counts['01'])/total
         count_dict['PB'] = (haplotype_counts['00']+haplotype_counts['10'])/total
         count_dict['PAB'] = (haplotype_counts['00'])/total
@@ -201,7 +183,7 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         The Nigerian population we used had 100 individuals, so 200 alleles
         '''
         count_dict = {'PA': 0, 'PB': 0, 'PAB': 0}
-        total = 200 # will need to update this, different for each population. 
+        total = 200 
         count_dict['PA'] = (haplotype_counts['00']+haplotype_counts['01'])/total
         count_dict['PB'] = (haplotype_counts['00']+haplotype_counts['10'])/total
         count_dict['PAB'] = (haplotype_counts['00'])/total
@@ -212,31 +194,26 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         '''
         Function obtains the PA, PB, PAB allele frequencies needed for r^2 and D' calculations
         In this case, I'm dividing the frequencies by the total individuals in the population
-        The British population we used had 105 individuals, so 210 alleles
+        The Japanese population we used had 105 individuals, so 210 alleles
         '''
         count_dict = {'PA': 0, 'PB': 0, 'PAB': 0}
-        total = 210 # will need to update this, different for each population. 
+        total = 210 
         count_dict['PA'] = (haplotype_counts['00']+haplotype_counts['01'])/total
         count_dict['PB'] = (haplotype_counts['00']+haplotype_counts['10'])/total
         count_dict['PAB'] = (haplotype_counts['00'])/total
 
         return count_dict
 
-    # printing PA, PB, PBA
+    # Assigning the frequencies PA, PB, PBA for each population
     british_loci_frequencies = count_PA_PB_PAB_british(british_haplotypes_count)
-    #print('british allele loci frequencies:', british_loci_frequencies)
-
     nigerian_loci_frequencies = count_PA_PB_PAB_nigerian(nigerian_haplotypes_count)
-    #print('nigerian allele loci frequencies:', nigerian_loci_frequencies)
-
     japanese_loci_frequencies = count_PA_PB_PAB_japanese(japanese_haplotypes_count)
-    #print('japanese allele loci frequencies:', japanese_loci_frequencies)
 
 
     ##########
     # STEP 5
     ##########
-    # calculating LD from the values calculated above
+    # calculating LD from the frequencies calculated above
     def LD_D_function(PA, PB, PAB):
         '''
         Function that calculates D
@@ -245,15 +222,10 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
         D = PAB - (PA * PB)
         return D
 
-    # printing the D
+    # Assigning the D for each population
     british_LD = LD_D_function(british_loci_frequencies['PA'], british_loci_frequencies['PB'], british_loci_frequencies['PAB'])
-    #print('british LD:', british_LD)
-
     nigerian_LD = LD_D_function(nigerian_loci_frequencies['PA'], nigerian_loci_frequencies['PB'], nigerian_loci_frequencies['PAB'])
-    #print('nigerian LD:', nigerian_LD)
-
     japanese_LD = LD_D_function(japanese_loci_frequencies['PA'], japanese_loci_frequencies['PB'], japanese_loci_frequencies['PAB'])
-    #print('japanese LD:', japanese_LD)
 
 
     ##########
@@ -274,25 +246,19 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
 
     # calculating the r^2 for each population
     british_r2 = calculate_r_squared(british_LD, british_loci_frequencies['PA'], british_loci_frequencies['PB'])
-    #print('british r2:', british_r2)
-
     nigerian_r2 = calculate_r_squared(nigerian_LD, nigerian_loci_frequencies['PA'], nigerian_loci_frequencies['PB'])
-    #print('nigerian r2:', nigerian_r2)
-
     japanese_r2 = calculate_r_squared(japanese_LD, japanese_loci_frequencies['PA'], japanese_loci_frequencies['PB'])
-    #print('japanese r2:', japanese_r2)
 
 
     ##########
     # STEP 6
     ##########
     # calculating D' from D
-
     def D_prime(D, PA, PB):
         '''
         Function for calculating D' measurement of Linkage Disequilibrium. 
         Function takes D, PA and PB calculated previously. 
-        The equation for D' is D / Dmax 
+        The equation for D' is D / Dmax. Dmax is calculated differently for D>0 and D<0.
         '''
         try: 
             if D > 0:
@@ -305,18 +271,13 @@ def LinkageDisequilibrium(rs_ID1, rsID_2):
 
         return D_prime
 
-
+    # Calculating D' for each population
     british_dprime = D_prime(british_LD, british_loci_frequencies['PA'], british_loci_frequencies['PB'])
-    #print('british dprime:', british_dprime)
-
     nigerian_dprime = D_prime(nigerian_LD, nigerian_loci_frequencies['PA'], nigerian_loci_frequencies['PB'])
-    #print('nigerian dprime:', nigerian_dprime)
-
     japanese_dprime = D_prime(japanese_LD, japanese_loci_frequencies['PA'], japanese_loci_frequencies['PB'])
-    #print('japanese dprime:', japanese_dprime)
 
 
-    # return a dictionary of all the possible needed calculations/results from this function
+    # The results of this big function is a dictionary of all the possible needed calculations/results
     results = {'rsID_1': rs_ID1, 'rsID_2': rsID_2,
                 'british_haplotypes': british_haplotypes_count, 'nigerian_haplotypes': nigerian_haplotypes_count, 'japanese_haplotypes': japanese_haplotypes_count, 
                 'british_pA':  british_loci_frequencies['PA'], 'british_pB': british_loci_frequencies['PB'], 'british_pAB': british_loci_frequencies['PAB'],
