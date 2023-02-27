@@ -1,4 +1,4 @@
-# The function takes two prompts as input. filename which will be the population vcf file and output which is the txt file that the allele frequencies are written to.
+# The function takes two prompts as input. filename which will be the population vcf file and output which is the text file that the allele frequencies are written to.
 def Allele_Frequency(filename, output):
     with open(filename, "r") as f:
         # Open the output file
