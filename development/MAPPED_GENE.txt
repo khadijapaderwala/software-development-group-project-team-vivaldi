@@ -1,0 +1,556 @@
+SNPS	MAPPED_GENE	MAPPED_GENE_1	MAPPED_GENE_2	MAPPED_GENE_3	MAPPED_GENE_4	MAPPED_GENE_5	MAPPED_GENE_6	MAPPED_GENE_7	MAPPED_GENE_8	MAPPED_GENE_9	MAPPED_GENE_10	MAPPED_GENE_11	MAPPED_GENE_12	MAPPED_GENE_13
+rs1004446	INS-IGF2													
+rs1004446	INS-IGF2													
+rs10137082	EFS	IL25												
+rs1015166	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2						
+rs10169963	MIR3681HG													
+rs10169963	MIR3681HG													
+rs10186458	SLC7A15P	RNA5SP86												
+rs10213692	ANKRD55													
+rs10213692	ANKRD55													
+rs10245867	JAZF1													
+rs10245867	JAZF1													
+rs10255565	HECW1													
+rs10258381														
+rs10277986	NA	COBL												
+rs10509540	NA	RNLS												
+rs1050979	IRF4													
+rs10517086	LINC02357													
+rs1052553	MAPT	MAPT	MAPT											
+rs1052553	MAPT	MAPT	MAPT											
+rs1052553	MAPT	MAPT	MAPT											
+rs10625784														
+rs10751776	RUNX3	MIR4425												
+rs10758593	GLIS3													
+rs10786436	HPSE2													
+rs10788599	RNLS													
+rs10795791	IL2RA	RPL32P23												
+rs10811662	CDKN2B-AS1	DMRTA1												
+rs10822050	NA	ALDH7A1P4												
+rs10831551	MIR4686	ASCL2												
+rs10876866	RPS26	ERBB3												
+rs10919543	RPS23P10	FCGR3A												
+rs10933559	FARP2													
+rs10933559	FARP2													
+rs10961433	NFIB													
+rs10974438	GLIS3													
+rs10988542	FNBP1													
+rs11033048	SLC1A2													
+rs11033048	SLC1A2													
+rs11052552	CLEC2D	LINC02390												
+rs1110458	HS3ST2	USP31												
+rs11120029	TATDN3													
+rs11120029	TATDN3													
+rs11145763	CARD9													
+rs11154178	TRDN													
+rs11170445	HIGD1AP1	EIF4A1P4												
+rs11171739	ERBB3													
+rs111821448	PHLDB2													
+rs11203202	UBASH3A													
+rs11203203	UBASH3A													
+rs11258747	PRKCQ													
+rs113010081	CCRL2	LINC02009												
+rs113114656	SMAD2													
+rs113306148	PLEKHA1													
+rs113517532	LINC01117													
+rs113554206	PAPLN													
+rs113881148	DGKQ													
+rs113881148	DGKQ													
+rs113935429	FTO													
+rs114378220	CAMK4													
+rs114631266	OR2W1	OR2P1P												
+rs114846446	LINC01250													
+rs115061173	LINC01266	RN7SL120P												
+rs11580078	C1orf141	IL23R												
+rs115829748	NA	MAP1B												
+rs116020851	HCG21	HCG21	HCG21	HCG21	HCG21	SFTA2	SFTA2	SFTA2	SFTA2	SFTA2	SFTA2			
+rs116216059	STAC													
+rs11651753	PNPO	PRR15L												
+rs116763857	POU5F1	POU5F1	POU5F1	POU5F1	POU5F1	POU5F1	POU5F1							
+rs11698685	MIR646HG													
+rs11705721	PXK													
+rs11723864	HAND2-AS1													
+rs11725853	GLRA3													
+rs117372389	NKD1													
+rs11741255	IRF1	IRF1-AS1												
+rs11755527	BACH2													
+rs11755527	BACH2													
+rs11755527	BACH2													
+rs11755527	BACH2													
+rs11755527	BACH2													
+rs117826205	MALRD1													
+rs118124843	VARS2	VARS2	VARS2	VARS2	VARS2	VARS2								
+rs11839053	LINC00460	RPL35P9												
+rs11888640	THADA													
+rs11954020	IL7R	CAPSL												
+rs12128789	LINC02773	BATF3												
+rs12203596	STMND1													
+rs12232497	ZPBP2	GSDMB												
+rs12251307	RPL32P23	RBM17												
+rs12251307	RPL32P23	RBM17												
+rs12344245	FAM189A2													
+rs12344245	FAM189A2													
+rs12416116	RNLS													
+rs12437854														
+rs12444268	GP2	UMOD												
+rs12453507	ZPBP2	GSDMB												
+rs12464462	MIR4432HG													
+rs12482425														
+rs1250563	ZMIZ1													
+rs12508379	STIM2	LINC02261												
+rs12598357	SBK1	NPIPB6												
+rs12615970	ALLC													
+rs12644686	LINC02362													
+rs12644905	CENPU	ACSL1												
+rs1265057	RNU6-1133P	C6orf15												
+rs1265564	CUX2													
+rs12665429	NA	LINC02539												
+rs12665429	NA	LINC02539												
+rs12679857	TNFRSF11B	RNU6-12P												
+rs12708716	CLEC16A													
+rs12708716	CLEC16A													
+rs12708716	CLEC16A													
+rs12708716	CLEC16A													
+rs12708716	CLEC16A													
+rs1270942	CFB	CFB	CFB	CFB	CFB	CFB								
+rs12712067	AFF3													
+rs12712067	AFF3													
+rs12720356	TYK2													
+rs12722495	IL2RA													
+rs12742756	INPP5B													
+rs1275406	DCAF5													
+rs12863738	RPL22P23	SRRM1P3												
+rs12927355	CLEC16A													
+rs12928404	ATXN2L													
+rs12971201	PTPN2													
+rs13018977	SEPTIN2													
+rs13045180	EFCAB8													
+rs13132147	STIM2	LINC02261												
+rs13147255	LINC02516	ANKRD50												
+rs13217044	NA	PDE10A												
+rs13259300	COLEC10													
+rs1326934	SORBS1													
+rs1332099	NKX2-3	SLC25A28												
+rs13415583	AFF3													
+rs1344228														
+rs138181578	RUNX2	NA												
+rs138748427	HLA-DRB9	HLA-DRB5												
+rs138760780	CDK18													
+rs138760780	CDK18													
+rs139881548	GABRA2													
+rs140215710	KCNQ1DN	CDKN1C												
+rs1405209	NR4A3	STX17-AS1												
+rs1405209	NR4A3	STX17-AS1												
+rs142823282	FANCD2P2													
+rs143537377	LINC02212													
+rs143723948	PAX5													
+rs144434404	BMP7													
+rs1445898	CAPSL													
+rs145681168	HAND2-AS1													
+rs1456988	LINC01550	NA												
+rs1465788	ZFP36L1	MAGOH3P												
+rs1493696	NOTCH2													
+rs149641852	SNCAIP	MGC32805												
+rs151234	CLN3													
+rs1534422	MIR3681HG													
+rs1538171	CENPW	MIR588												
+rs1578060	CENPW	MIR588												
+rs1615504	CD226													
+rs1689510	SUOX													
+rs16956936	DNAH2													
+rs1701704	IKZF4													
+rs1701704	IKZF4													
+rs17143056	NA	EEF1A1P27												
+rs17143056	NA	EEF1A1P27												
+rs17166496	FSTL4													
+rs17206992	GALNT13													
+rs17388568	ADAD1													
+rs17388568	ADAD1													
+rs17407280	KIF17													
+rs17466626	LRRK2													
+rs17696736	NAA25													
+rs17696736	NAA25													
+rs17696736	NAA25													
+rs1770	HLA-DQB1	HLA-DQB1	HLA-DQB1	HLA-DQB1	HLA-DQB1	HLA-DQB1	HLA-DQB1-AS1	HLA-DQB1-AS1	HLA-DQB1-AS1	HLA-DQB1-AS1	HLA-DQB1-AS1	HLA-DQB1-AS1		
+rs17711850	BACH2													
+rs178050	PI4KA													
+rs17885785	INS-IGF2	IGF2-AS												
+rs1805731	M6PR													
+rs1805731	M6PR													
+rs181176493	RN7SL807P	NA												
+rs183937294	PLEKHA7													
+rs185299109	LINC00470	AIDAP3												
+rs185335076	STIM2	LINC02261												
+rs1876142	TTC33													
+rs1876142	TTC33													
+rs1881146	MIR3681HG													
+rs1893217	PTPN2													
+rs1893217	PTPN2													
+rs191449639	MUC7	AMTN												
+rs192324744	LRP1B													
+rs193778	RMI2													
+rs1947178	TOX													
+rs1970112	CDKN2B-AS1													
+rs1980493	TSBP1-AS1	BTNL2	BTNL2	BTNL2	BTNL2									
+rs1983853	LPAR3													
+rs1983890	RBM17	PFKFB3												
+rs1989248	RN7SL72P	NA												
+rs1990760	IFIH1													
+rs1990760	IFIH1													
+rs1990760	IFIH1													
+rs2066363	ADGRL2													
+rs2069762	IL2	NA												
+rs2075184	IL18RAP	SLC9A4												
+rs2085277														
+rs2111485	FAP	IFIH1												
+rs212408	TAGAP-AS1													
+rs212408	TAGAP-AS1													
+rs2128344	LINC00320													
+rs2148655	DGKH													
+rs2153977	MAGI3													
+rs2165738	ITSN2	NCOA1												
+rs2229238	IL6R													
+rs2229238	IL6R													
+rs2237897	KCNQ1	KCNQ1												
+rs2250903	CTSB	OR7E158P												
+rs2250903	CTSB	OR7E158P												
+rs2251396	HLA-S	MICA												
+rs2269241	PGM1													
+rs2269242														
+rs2269242														
+rs2269247	PGM1													
+rs2269247	PGM1													
+rs2281808	SIRPG													
+rs2290400	GSDMB													
+rs2292239	ERBB3													
+rs2292239	ERBB3													
+rs2292239	ERBB3													
+rs2292239	ERBB3													
+rs229533	C1QTNF6													
+rs229541	C1QTNF6													
+rs229541	C1QTNF6													
+rs2304256	TYK2													
+rs2304256	TYK2													
+rs2358994	AP4B1-AS1	BCL2L15												
+rs238265	LINC02341													
+rs2410601	PSD3													
+rs241427	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2						
+rs2471863	HLA-K	HLA-U												
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2476601	PTPN22													
+rs2523989	TRIM31	TRIM31	TRIM31	TRIM31	TRIM31	TRIM31	TRIM31	TRIM31-AS1	TRIM31-AS1	TRIM31-AS1	TRIM31-AS1	TRIM31-AS1	TRIM31-AS1	TRIM31-AS1
+rs2542151	LINC01882	PTPN2												
+rs2542151	LINC01882	PTPN2												
+rs2542151	LINC01882	PTPN2												
+rs2597169	PRR15L													
+rs2597169	PRR15L													
+rs2611215	NA	LINC01179												
+rs2641348	ADAM30													
+rs2641348	ADAM30													
+rs2647044	HLA-DQB1	MTCO3P1												
+rs2664170	GAB3													
+rs2738774	MHENCR	STMN3												
+rs2807264	RNU6-320P	LINC00892												
+rs2816313	NA	RGS1												
+rs2816313	NA	RGS1												
+rs2836882	NA	RPL23AP12												
+rs2847278	LINC01882	PTPN2												
+rs28485846	UNC5D													
+rs2857595	NCR3	UQCRHP1												
+rs28600853	TTC34	NA												
+rs28641753														
+rs2872507	ZPBP2	GSDMB												
+rs2903692	CLEC16A													
+rs2941522	GRB7	IKZF3												
+rs2990510	F13B													
+rs3024505	Y_RNA	IL10												
+rs3024505	Y_RNA	IL10												
+rs3024505	Y_RNA	IL10												
+rs3087243	CTLA4	ICOS												
+rs3087243	CTLA4	ICOS												
+rs3087243	CTLA4	ICOS												
+rs3087243	CTLA4	ICOS												
+rs3093664	TNF	TNF	TNF	TNF	TNF	TNF	TNF							
+rs3128930	COL11A2P1	HLA-DPB2												
+rs3134938	NOTCH4	TSBP1-AS1												
+rs3135002	HLA-DQB1	MTCO3P1												
+rs3135002	HLA-DQB1	MTCO3P1												
+rs3135365	TSBP1-AS1	HLA-DRA												
+rs317865	PROM1	TAPT1												
+rs3184504	ATXN2	SH2B3												
+rs3184504	ATXN2	SH2B3												
+rs3184504	ATXN2	SH2B3												
+rs3184504	ATXN2	SH2B3												
+rs3184504	ATXN2	SH2B3												
+rs337637	KLF3-AS1													
+rs337637	KLF3-AS1													
+rs34090353	RPAP2													
+rs34090353	RPAP2													
+rs34319244	UBE2G1	SPNS3												
+rs34536443	TYK2													
+rs34536443	TYK2													
+rs34593439	CTSH													
+rs34740712	TLL1													
+rs34884278	NA	AIMP1P2												
+rs34941730	HLA-A	HLA-W												
+rs35122968	MTCO3P1	HLA-DQB3												
+rs35612822	RPL37A													
+rs35667974	IFIH1													
+rs35766765	PHF20L1													
+rs35956129	STIM2	LINC02261												
+rs36001488	ATG16L1	ATG16L1												
+rs36051895	HNRNPA1P41	JAK2												
+rs373009901	GRK3													
+rs3741208	INS-IGF2	IGF2-AS												
+rs3757247	BACH2													
+rs3757787	PAX4	SND1												
+rs3757787	PAX4	SND1												
+rs3761980	SLC26A8	MAPK14												
+rs3764021	CLEC2D													
+rs3788013	UBASH3A													
+rs3802214	AGO2													
+rs3802604	GATA3													
+rs3825932	CTSH													
+rs3825932	CTSH													
+rs3842727	INS	TH												
+rs3842727	INS	TH												
+rs3842727	INS	TH												
+rs3842727	INS	TH												
+rs3842753	INS	INS-IGF2												
+rs3864055	Y_RNA	ARL8B												
+rs3997848	MTCO3P1	HLA-DQB3												
+rs402072	PRKD2													
+rs4084127	FGF4	FGF3												
+rs41295121	RPL32P23	RBM17												
+rs4148870	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2	TAP2						
+rs416603	RMI2													
+rs4238595	GP2	UMOD												
+rs4238595	GP2	UMOD												
+rs4238595	GP2	UMOD												
+rs4246905	TNFSF15													
+rs425105	PRKD2													
+rs4263714	NA	COBL												
+rs428595	MIR130B	PPIL2												
+rs428595	MIR130B	PPIL2												
+rs4320356	BTN2A3P													
+rs4366464	IGF2-AS	INS-IGF2												
+rs4505848	KIAA1109													
+rs4513644	NA	LINC02225												
+rs45626136	RPP21	RPP21	RPP21	RPP21	RPP21	RPP21	TRIM39-RPP21							
+rs4625	DAG1													
+rs4676410	GPR35													
+rs4763879	CD69													
+rs478222	EFR3B													
+rs4788084	IL27	NUPR1												
+rs4788084	IL27	NUPR1												
+rs4820830	HORMAD2													
+rs4837404	PTGES													
+rs4849135	ACOXL													
+rs4869313	ERAP2													
+rs4871297	LINC01151													
+rs4900384	LINC01550	NA												
+rs4929965	MIR4686	ASCL2												
+rs4948088	NA	COBL												
+rs4972593														
+rs516246	FUT2													
+rs537544	GATA3													
+rs539514	LMO7													
+rs541856133	GTF3C5	CEL												
+rs550448	JAZF1-AS1													
+rs551191707	PCAT1	CASC19	PRNCR1											
+rs55703767	MFF-DT	COL4A3												
+rs55703767	MFF-DT	COL4A3												
+rs55703767	MFF-DT	COL4A3												
+rs55703767	MFF-DT	COL4A3												
+rs55705316	Y_RNA	IL10												
+rs55846421	NEMF													
+rs559047	KRT18P32	NA												
+rs559047	KRT18P32	NA												
+rs56178904	GATD3A													
+rs56178904	GATD3A													
+rs56337234	TACC3	FGFR3												
+rs56380902	GSDMB													
+rs56994090	MEG3													
+rs570794153	ATP6V1G3	PTPRC												
+rs571622299	KCNB2													
+rs57209021	RDM1P3	ARHGAP27P2												
+rs574384	PSMB2													
+rs574480779	MRPL22	KIF4B												
+rs5753037	HORMAD2	LIF-AS1												
+rs5790666	BDNF	CBX3P1												
+rs602662	FUT2													
+rs6027504	MIR646HG													
+rs6027506	MIR646HG													
+rs6043409	SIRPG-AS1	SIRPG												
+rs605093	FLI1													
+rs605093	FLI1													
+rs6055069	DEFB126	DEFB127												
+rs60587303	STK39													
+rs607703	FLI1													
+rs61211515	TRIM31-AS1	TRIM40												
+rs61211515	TRIM31-AS1	TRIM40												
+rs61277444	PTPN13													
+rs61277444	PTPN13													
+rs614226	RNF10													
+rs61759532	ACAP1													
+rs61839660	IL2RA													
+rs61839660	IL2RA													
+rs61879614	TUB													
+rs61983410														
+rs62131887	PDE4A	KEAP1												
+rs62324212	IL21-AS1													
+rs62447205	IKZF1													
+rs6448501	STIM2	LINC02261												
+rs645078	RPS6KA4													
+rs645078	RPS6KA4													
+rs6461299	AHR													
+rs6476839	GLIS3													
+rs6518350	GATD3A													
+rs653178	ATXN2													
+rs6534347	KIAA1109													
+rs6547853	FOSL2	PLB1												
+rs657152	ABO	ABO												
+rs6679677	PHTF1	RSBN1												
+rs6679677	PHTF1	RSBN1												
+rs6679677	PHTF1	RSBN1												
+rs6679677	PHTF1	RSBN1												
+rs6679677	PHTF1	RSBN1												
+rs6679677	PHTF1	RSBN1												
+rs6689858	CRB1													
+rs6691977	CAMSAP2													
+rs67213764	LINC01683	NA												
+rs689	INS-IGF2	INS												
+rs689	INS-IGF2	INS												
+rs689	INS-IGF2	INS												
+rs689	INS-IGF2	INS												
+rs689	INS-IGF2	INS												
+rs6897932	IL7R													
+rs6931865	PHACTR2													
+rs7020673	GLIS3													
+rs7042370	LURAP1L	LURAP1L-AS1												
+rs705699	RAB5B													
+rs705705	RPS26													
+rs706778	IL2RA													
+rs706779	IL2RA													
+rs70962766	COMMD1	B3GNT2												
+rs7100025	LINC00993													
+rs7111341	MIR4686	ASCL2												
+rs71597855	LNX1	NA												
+rs7167984	RGMA	SEPHS1P2												
+rs7171171	RASGRP1	LINC02694												
+rs7202877	CTRB2	CTRB1												
+rs7221109	CCR7	SMARCE1												
+rs722988	IATPR	NRP1												
+rs722988	IATPR	NRP1												
+rs72727394	RASGRP1													
+rs72743477	SMAD3													
+rs72802342	ZFP1	CTRB2												
+rs72809865														
+rs72831309	TENM2													
+rs72853903	MIR4686	ASCL2												
+rs72871627	IFIH1													
+rs72928038	BACH2													
+rs7301381	KLRG1													
+rs73018809	NUP210													
+rs73043122	RNASET2	MIR3939												
+rs7313065	SPRYD3													
+rs7313065	SPRYD3													
+rs74203920	AIRE													
+rs743777	IL2RB													
+rs74537115	LINC02341													
+rs74537115	LINC02341													
+rs74629033	PLGRKT													
+rs7524087	LINC02771													
+rs7528684	FCRL3	VDAC1P9												
+rs7533564	MGC27382	PTGFR												
+rs755374	IL12B	LINC01845												
+rs7562121	AFF3													
+rs7567242	RNA5SP94	MIR4432HG												
+rs757411	CCR7	SMARCE1												
+rs75793288	KIAA1109													
+rs7582694	STAT4													
+rs7582694	STAT4													
+rs7583877	AFF3													
+rs7583877	AFF3													
+rs7588550	ERBB4													
+rs763361	CD226													
+rs763361	CD226													
+rs7660520	TENM3	DCTD												
+rs766751473	IRF1-AS1													
+rs7672495	RN7SKP113	CYTL1												
+rs7679475	QRFPR	TUBB4BP5												
+rs7684596	STIM2	LINC02261												
+rs7684597	STIM2	LINC02261												
+rs7684611	STIM2	LINC02261												
+rs77150043	ADCY7													
+rs77155259	SLC4A10													
+rs7725052	RNU1-150P	TTC33												
+rs77273076	MBLAC1	RPL7P60												
+rs7731626	ANKRD55													
+rs7760731	HLA-DRB1	HLA-DQA1												
+rs7795896	CFTR													
+rs78031527	JAKMIP1	C4orf50												
+rs78037977	FASLG	SLC25A38P1												
+rs78037977	FASLG	SLC25A38P1												
+rs7804356	SKAP2													
+rs7805218	ITGB8													
+rs7831697	RNU6-144P	NA												
+rs78325861	PRF1	ADAMTS14												
+rs7871386														
+rs78824139	EYS													
+rs78896587	H19	IGF2												
+rs7903146	TCF7L2													
+rs79237700	LINC02490	WDR72												
+rs7936434	EMSY	LINC02757												
+rs79538630	SLC15A3	CD6												
+rs79538630	SLC15A3	CD6												
+rs80028505	MAPK14													
+rs8035957	RASGRP1													
+rs8046043														
+rs8056814	CTRB2	CTRB1												
+rs836589	PDK1	RAPGEF4-AS1												
+rs855330	PGM1													
+rs857786	OR10AA1P	MNDA												
+rs878889	NA	OTX2												
+rs886424	LINC00243													
+rs911263	RAD51B													
+rs911263	RAD51B													
+rs917911	CD69													
+rs924043														
+rs9260151	HLA-A	HLA-A	HLA-A	HLA-A										
+rs926169	RNU6-474P	CTLA4												
+rs9264758	RPL3P2	RPL3P2	RPL3P2	RPL3P2	RPL3P2	RPL3P2								
+rs926592	TSBP1-AS1	TSBP1	TSBP1	TSBP1	TSBP1									
+rs9268576	TSBP1-AS1	HLA-DRA												
+rs9268645	HLA-DRA	HLA-DRA	HLA-DRA	HLA-DRA	HLA-DRA									
+rs9268853	HLA-DRB9	HLA-DRB9	HLA-DRB9	HLA-DRB9	HLA-DRB9	HLA-DRB9								
+rs9272346	HLA-DQA1	HLA-DQA1	HLA-DQA1	HLA-DQA1	HLA-DQA1									
+rs9272346	HLA-DQA1	HLA-DQA1	HLA-DQA1	HLA-DQA1	HLA-DQA1									
+rs9273363	HLA-DQA1	HLA-DQB1												
+rs9273367	HLA-DQA1	HLA-DQB1												
+rs9273368	HLA-DQA1	HLA-DQB1												
+rs9273368	HLA-DQA1	HLA-DQB1												
+rs9275358	HLA-DQB1	MTCO3P1												
+rs9354144														
+rs9356171	RN7SL366P	NA												
+rs9388489	CENPW	NA												
+rs9405661	IRF4	EXOC2												
+rs9405661	IRF4	EXOC2												
+rs941576	MEG3													
+rs947474	LINC02649													
+rs9501130	LINC01149	HCP5												
+rs950146	NBPF21P	RN7SKP227												
+rs9585056	CCR12P	TM9SF2												
+rs9653442	LINC01104													
+rs968567	FADS1	FADS2												
+rs968567	FADS1	FADS2												
+rs9810233	NA	ALCAM												
+rs9850225	LINC02050	NA												
+rs9934817	RBFOX1													
+rs9976767	UBASH3A													
