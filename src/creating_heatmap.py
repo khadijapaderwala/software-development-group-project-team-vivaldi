@@ -8,27 +8,33 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 
-# from the html page, the code would somehow create a list 
-# and I can link to it from here, obtain the list 
-
-# simulating a list of rsIDs chosen by the user
-#rsID_list = ['rs1050979', 'rs9405661', 'rs13217044', 'rs12203596']
-
-
-# Loop over every possible pair of strings
+# A function to loop over every possible pair of strings
 def LD(rsID_list):
+    '''
+    Function loops over every possible pair of strings, without replacement. 
+    Input: a list of rsIDs. 
+    Output: a dictionary of LD measures for each pair of rsIDs. 
+    '''
     results_pairwise_LD = []
     for i in range(len(rsID_list)):
         for j in range(i+1, len(rsID_list)):
             rsID_1 = rsID_list[i]
             rsID_2 = rsID_list[j]
-            # Call your function with the two strings
+            # Calls LinkageDisequilibrium function, which calculates the LD measures for those two rsIDs.
             result = LinkageDisequilibrium(rsID_1, rsID_2)
             results_pairwise_LD.append(result)
     # This creates the list of dictionaries with ALL the LD values and calculations
     return results_pairwise_LD
 
+# A function to create the 6 heatmaps for the user's search
 def heatmap(results_pairwise_LD, rsID_list):
+    ''' 
+    This function creates the 6 heatmaps.
+    Inputs: 
+    :param results_pairwise_LD: the dictionaries of the LD measurements. 
+    :param rsID_list: the list of rsIDs that the user inputted. 
+    Outputs: the 6 heatmaps (R^2 and D' for British, Nigerian, Japanese populations)
+    '''
     ####### ALL THE NECESSERY OUTPUTS FOR THE HEATMAPS. 
             # BRITISH R2, NIGERIAN R2, JAPANESE R2
             # BRITISH D', NIGERIAN D', JAPANESE D' 
@@ -76,8 +82,13 @@ def heatmap(results_pairwise_LD, rsID_list):
             plt.savefig("static/japanese_dprime.png")
 
 
-# print out the file as a txt file for the user
+# Function to print out a file as a txt file for the user
 def write_table_to_file(data):
+    '''
+    Function that takes some results and outputs them as a txt file. 
+    Input: data. 
+    Output: a txt file. 
+    '''
     with open('static/output.txt', 'w', newline='') as f:
         writer = csv.writer(f, delimiter='\t')
         writer.writerow(data[0].keys())  # Write the header row
