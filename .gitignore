@@ -1,1 +1,8 @@
+# Ignore venv files
 venv/*
+
+# Ignore .DS_store files
+.DS_store
+
+# Ignore pycache files
+__pycache__
