@@ -38,7 +38,7 @@ def index():
     form = NameForm() # Assigns class to variable form
     message = ""
     error_msg= """Hey, looks like you're searching something wild. 
-                    If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:                         [coordinate]'.
+                    If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:[coordinate]'.
                     Otherwise, it ain't in the database."""
     try:
         # If user searches through rs ID by entering 'rs' as the first 2 letters
