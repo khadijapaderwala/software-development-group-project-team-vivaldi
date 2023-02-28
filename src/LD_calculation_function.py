@@ -2,7 +2,7 @@
 
 import sqlite3
 
-def LinkageDisequilibrium(rs_ID1, rsID_2):
+def linkage_disequilibrium_calculation(rs_ID1, rsID_2):
     '''
     This is a big function. It calculates the LD measures from two rs IDs.
     The population data for the British, Nigerian, and Japanese populations is obtained from .db files.
