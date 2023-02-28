@@ -26,9 +26,13 @@ python -m venv venv
 ```
 
 3. Source the environment:
-
+    on Mac:
 ```shell
 source venv/bin/activate
+```
+    on Windows
+```shell
+venv\Scripts\activate
 ```
 
 4. Install project dependencies:
