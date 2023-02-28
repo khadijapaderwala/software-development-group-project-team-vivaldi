@@ -3,7 +3,7 @@
 
 ## Description
 'T1 Diabetes SNP search' is a tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
-Team members are Marta, Khadija, Thuvaragan, Jiang and Tobi. 
+Team members are Marta, Khadija, Thuvarahgan, Jiang and Tobi. 
 
 This app ....
 
