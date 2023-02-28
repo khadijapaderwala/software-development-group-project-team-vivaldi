@@ -25,13 +25,12 @@ pip install virtualenv
 python -m venv venv
 ```
 
-3. Source the environment:
-    on Mac:
+3.1 Source the environment (on Mac):
 ```shell
 source venv/bin/activate
 ```
 
-    on Windows
+3.1 Source the environment (on Windows):
 ```shell
 venv\Scripts\activate
 ```
