@@ -2,7 +2,7 @@
 # It will then calculate the LD for all pairs of SNPs, and create a heatmap for each population separately, 
 # and for r2 and D' separately.
 
-from src.LD_calculation_function import LinkageDisequilibrium 
+from src.LD_calculation_function import linkage_disequilibrium_calculation
 from src.LDheatmap import LDheatmap
 import matplotlib
 matplotlib.use('Agg')
@@ -22,7 +22,7 @@ def LD(rsID_list):
             rsID_1 = rsID_list[i]
             rsID_2 = rsID_list[j]
             # Calls LinkageDisequilibrium function, which calculates the LD measures for those two rsIDs.
-            result = LinkageDisequilibrium(rsID_1, rsID_2)
+            result = linkage_disequilibrium_calculation(rsID_1, rsID_2)
             results_pairwise_LD.append(result)
     # This creates the list of dictionaries with ALL the LD values and calculations
     return results_pairwise_LD
