@@ -115,10 +115,9 @@ def SNPs(id):
                     FROM SNP
                     INNER JOIN P_Value ON SNP.id = P_value.RS_ID
                     LEFT JOIN Gene_SNP ON SNP.id = Gene_SNP.SNP_ID
-                    INNER JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
-                    JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID
+                    LEFT JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
                     WHERE SNP.id=?
-                    GROUP BY Gene.id""", [id])
+                    GROUP BY GENE.id""", [id])
         rows = cur.fetchall()
         print(rows)
         conn.close()
@@ -160,12 +159,11 @@ def Region_range(chr_n, chr_p1, chr_p2):
         ESN_REF_FREQ, ESN_ALT_FREQ,
         CADD,
         MIN(P_VALUE),
-        GENE.id, FUNCTIONAL
+        Gene.id, FUNCTIONAL
         FROM SNP
         INNER JOIN P_Value ON SNP.id = P_value.RS_ID
         LEFT JOIN Gene_SNP ON SNP.id = Gene_SNP.SNP_ID
-        INNER JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
-        JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID
+        LEFT JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
         WHERE CHR_N=? 
         AND CHR_P BETWEEN ? and ?
         GROUP BY SNP.id, Gene.id
@@ -180,7 +178,7 @@ def Region_range(chr_n, chr_p1, chr_p2):
             list_ld = ld.split(", ") # rs ids are split with a comma and put into a list
             print(list_ld)
             data = LD(list_ld)
-            heat = heatmap(data, list_ld) # Using imported heat function to make a heatmap
+            heatmap(data, list_ld) # Using imported heat function to make a heatmap
             write_table_to_file(data)
             return redirect(url_for('txtfile'))  # Return route for txtfile
 
@@ -226,15 +224,14 @@ def Region_single(chr_n, chr_p1):
         ESN_REF_FREQ, ESN_ALT_FREQ,
         CADD,
         MIN(P_VALUE),
-        GENE.id, FUNCTIONAL
+        Gene.id, FUNCTIONAL
         FROM SNP
         INNER JOIN P_Value ON SNP.id = P_value.RS_ID
         LEFT JOIN Gene_SNP ON SNP.id = Gene_SNP.SNP_ID
-        INNER JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
-        JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID
+        LEFT JOIN Gene ON Gene.id = Gene_SNP.GENE_ID
         WHERE CHR_N=? 
         AND CHR_P=?
-        GROUP BY SNP.id;""", (chr_n, chr_p1))
+        GROUP BY SNP.id, Gene.id;""", (chr_n, chr_p1))
         rows = cur.fetchall()
         conn.close()
         
@@ -277,13 +274,13 @@ def Gene(id):
         MIN(P_VALUE)
         FROM Gene
         LEFT JOIN Gene_SNP ON Gene.id = Gene_SNP.GENE_ID
-        JOIN SNP ON SNP.id = Gene_SNP.SNP_ID
+        LEFT JOIN SNP ON SNP.id = Gene_SNP.SNP_ID
         INNER JOIN P_Value ON SNP.id = P_value.RS_ID 
         WHERE Gene.id = ?
         GROUP BY SNP.id
         """, [id]) 
         rows = cur.fetchall()
-        cur.execute("SELECT FUNCTIONAL FROM Gene LEFT JOIN Gene_Functions ON Gene.id = Gene_Functions.GENE_ID WHERE id = ?", [id])
+        cur.execute("SELECT FUNCTIONAL FROM Gene WHERE id = ?", [id])
         func = cur.fetchall()
         print(func)
         conn.close()
