@@ -4,6 +4,8 @@
 
 from src.LD_calculation_function import LinkageDisequilibrium 
 from src.LDheatmap import LDheatmap
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import csv
 
