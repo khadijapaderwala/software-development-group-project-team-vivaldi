@@ -37,7 +37,7 @@ class LDForm(FlaskForm):
 def index():
     form = NameForm() # Assigns class to variable form
     message = ""
-    error_msg= """Hey, looks like you're searching something wild. 
+    error_msg= """Hey, looks like you're searching something wild. If you're searching rs ID, format it in lowercase.
                     If you're searching genomic coordinates please format it as 'chr[int]:[coordinate]-[coordinate]' or 'chr[int]:[coordinate]'.
                     Otherwise, it ain't in the database."""
     try:
