@@ -1,6 +1,6 @@
 ##  Software Development Project 
 ##  Team Vivaldi
-##  T1 Diabetes SNP Search 
+# T1 Diabetes SNP Search Tool
 
 ## Description
 'T1 Diabetes SNP search' is a tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
@@ -68,7 +68,7 @@ git checkout -b <feature>
 ```
 
 
-# Updating the requirements.txt file 
+### Updating the requirements.txt file 
 
 [https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/]
 
