@@ -25,29 +25,47 @@ SNP: {{ id }}
       <h1 class="pt-5 pb-2">{{ id }}</h1>
 
       <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+      
+       {{ wtf.quick_form(form) }}
 
 	  <!--
 	      notice how the URL in the link above is rendered for
 	      Flask - it needs to name the FUNCTION, not the route
       -->
 
-      <p>P Value: {{ rows[0][12] }}</p>
-      <p>CADD PHRED: {{ rows[0][11] }}</p>
-      <p>Location: {{ rows[0][1] }}:{{ rows[0][2] }}</p>
-      <p>Reference: {{ rows[0][3] }} / Alternate: {{ rows[0][4] }}</p>
-      <p>GBR_REF: {{ rows[0][5] }}      GBR_ALT: {{ rows[0][6] }}</p>
-      <p>JPT_REF: {{ rows[0][7] }}      JPT_ALT: {{ rows[0][8] }}</p>
-      <p>ESN_REF: {{ rows[0][9] }}      ESN_ALT: {{ rows[0][10] }}</p>
-
-      <table class="table">
+        <table class="table">
             <tr>
-                <th>Mapped Gene</th>
-                <th>Function</th>
+                <th>rs ID</th>
+                <th>Location</th>
+                <th>Reference Allele</th>
+                <th>Alternate Allele</th>
+                <th>GBR_REF Allele Frequency</th>
+                <th>GBR_ALT Allele Frequency</th>
+                <th>JPT_REF Allele Frequency</th>
+                <th>JPT_ALT Allele Frequency</th>
+                <th>ESN_REF Allele Frequency</th>
+                <th>ESN_ALT Allele Frequency</th>
+                <th>CADD</th>
+                <th>P Value</th>
+                <th>Mapped Genes</th>
+                <th>Functional</th>
             </tr>
 
             <!-- here is a for-loop to give us all the SNPS -->
             {% for row in rows %}
-            <tr> 
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}:{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+                <td>{{ row[9] }}</td>
+                <td>{{ row[10] }}</td>
+                <td>{{ row[11] }}</td>
+                <td>{{ row[12] }}</td>
                 <td>{{ row[13] }}</td>
                 <td>{{ row[14] }}</td>
             </tr>
