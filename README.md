@@ -1,11 +1,18 @@
-##  Software Development Project
+##  Software Development Project 
 ##  Team Vivaldi
+##  T1 Diabetes SNP Search 
 
 ## Description
+'T1 Diabetes SNP search' is a tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
+Team members are Marta, Khadija, Thuvaragan, Jiang and Tobi. 
 
-## Dependencies
+This app ....
 
-## Environment setup
+
+
+
+
+## Environment setup and Dependencies
 
 1. Install [virtualenv](https://pypi.org/project/virtualenv/) in global Python:
 
@@ -61,16 +68,9 @@ git checkout -b <feature>
 ```
 
 
-## Updating the requirements.txt file 
+# Updating the requirements.txt file 
 
 [https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/]
 
-## Data Wrangling
-## GWAS data
-## Population Data
 
-All the population data that we used was obtained from the international genome sample resource (IGSR) available at: https://www.internationalgenome.org/data-portal/sample . The data collection was filtered to 1000 genomes on GRCh38 data. We have selected three populations to calculate the population allele frequencies and linkage disequilibriums (LD) however, you can choose any suitable populations and however many populations based off your preferences. The three populations we have selected are: 
-- British in England and Scotland (GBR)
-- Esan in Nigeria (ESN) 
-- Japanese in Tokyo, Japan (JPT) 
 
