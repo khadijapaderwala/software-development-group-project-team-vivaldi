@@ -44,9 +44,9 @@ def main():
     ?, ?, ?);""", to_db,)
 
 # CADD import
-    with open('Database/Datasets/CADD.csv','r') as fin:
+    with open('Database/Datasets/CADD_C6.csv','r') as fin:
         dr = csv.DictReader(fin)
-        to_db = [(i['CADD_PHRED'], i['SNP']) for i in dr]
+        to_db = [(i['PHRED'], i['SNP']) for i in dr]
 
 #As there's rs IDs in the SNP table, this will only add values to the specific rs ID
     cur.executemany("""
@@ -94,23 +94,13 @@ def main():
     AND P_Value.rowid > p2.rowid
     ) ;""")
 
-#Gene Import
-    with open('Database/Datasets/Gene.txt','r') as fin:
-        dr = csv.DictReader(fin, delimiter='\t')
-        to_db = [(i['Genes'],) for i in dr] # it needs the comma or else execute many will treat each string's character as separate bindings
-
-    cur.executemany("""INSERT OR IGNORE INTO Gene
-    (id) 
-    VALUES 
-    (?);""", to_db)
-
 #Gene with Functional Terms Import
-    with open('Database/Datasets/Gene_Term.txt','r') as fin:
+    with open('Database/Datasets/Gene_Term_Updated.txt','r') as fin:
         dr = csv.DictReader(fin, delimiter='\t')
         to_db = [(i['Genes'], i['Function']) for i in dr]
 
-        cur.executemany("""INSERT OR IGNORE INTO Gene_Functions 
-        (GENE_ID, FUNCTIONAL) 
+        cur.executemany("""INSERT OR IGNORE INTO Gene 
+        (id, FUNCTIONAL) 
         VALUES 
         (?, ?);""", to_db,)
     
