@@ -1,5 +1,5 @@
-##  Software Development Project - Team Vivaldi
 # T1 Diabetes SNP Search Tool
+##  Software Development Project - Team Vivaldi
 
 ## Description
 'T1 Diabetes SNP search' is a tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
