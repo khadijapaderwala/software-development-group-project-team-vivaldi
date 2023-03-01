@@ -8,7 +8,7 @@ import sqlite3
 import re
 from src.manhattan_plot import manhattan_plot
 import pandas as pd
-from src.creating_heatmap import LD, write_table_to_file, heatmap 
+from src.LD_outputs import LD, write_table_to_file, heatmap 
 
 
 # Creates instance of flask application and assigns it to 'app'
