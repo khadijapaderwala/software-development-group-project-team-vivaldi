@@ -19,7 +19,7 @@ def linkage_disequilibrium_calculation(rs_ID1, rsID_2):
     
 
     ### BRITISH population data collection for the specified rs IDs ###
-    british_conn = sqlite3.connect('data/british_chr6.db')
+    british_conn = sqlite3.connect('Database/british_chr6.db')
     british_cursor = british_conn.cursor()
 
     british_keys = rs_ID1, rsID_2 
@@ -38,7 +38,7 @@ def linkage_disequilibrium_calculation(rs_ID1, rsID_2):
 
     
     ### NIGERIAN population data collection for the specified rs IDs ###
-    nigerian_conn = sqlite3.connect('data/nigerian_chr6.db')
+    nigerian_conn = sqlite3.connect('Database/nigerian_chr6.db')
     nigerian_cursor = nigerian_conn.cursor()
 
     nigerian_keys = rs_ID1, rsID_2 
@@ -57,7 +57,7 @@ def linkage_disequilibrium_calculation(rs_ID1, rsID_2):
 
 
     ### JAPANESE population data collection for the specified rs IDs ###
-    japanese_conn = sqlite3.connect('data/japanese_chr6.db')
+    japanese_conn = sqlite3.connect('Database/japanese_chr6.db')
     japanese_cursor = japanese_conn.cursor()
 
     japanese_keys = rs_ID1, rsID_2 
