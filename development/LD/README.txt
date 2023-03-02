@@ -2,7 +2,9 @@
 #Marta Delfino
 #data prep for group project
 
-# first, I need to populate the rs ID columns in the vcf files
+# My goal is to use the genotype data of the vcf files obtained from IGSR to calculate LD. 
+
+# first, I need to populate the rs ID columns in these files. Files from SNPnexus have this relationship, of rsIDs to chromosome positions.
 
 # I'm taking the vcf file from SNP nexus, called 1KGen.vcf, that was obtained by inputting the rs IDs obtained from the T1D GWAS data. 
 # I've zipped the vcf file and indexed it
@@ -21,7 +23,7 @@ grep "^6" input.vcf | wc -l
 
 # next I've counted the number of lines in the outputted file, and there are 62. so 62 positions of variants
 
-# then I've populated the ID column on the British_filtered_variants.vcf
+# then I've populated the ID column on the British_filtered_variants.vcf using this script
 python 230210_filling_id_in_british_vcf.py
 
 
