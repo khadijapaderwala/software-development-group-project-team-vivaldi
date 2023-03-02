@@ -2,11 +2,15 @@
 #Marta Delfino
 #data prep for group project
 
-# My goal is to use the genotype data of the vcf files obtained from IGSR to calculate LD. 
+# My goal is to use the genotype data of the vcf files obtained from IGSR (British GBR, Nigerian ESN, Japanese JPT) to calculate LD.
+# The population vcf files were created by Thuvarahgan. He obtained the 1000 Genomes on GRCh38 variant dataset for chromosome 6. 
+# Then, I need to filter these population files to only include the T1D related SNPs
+# Then, I need to fill in the rs ID column of the files. I can do this using the gen_coords.vcf file obtained from SNPnexus. This file was 
+# obtained buy querying the database using the list of T1D related rsIDs. 
 
-# first, I need to populate the rs ID columns in these files. Files from SNPnexus have this relationship, of rsIDs to chromosome positions.
 
-# I'm taking the vcf file from SNP nexus, called 1KGen.vcf, that was obtained by inputting the rs IDs obtained from the T1D GWAS data. 
+
+# Firstly, I'm working with gen_coords.vcf from SNPnexus. 
 # I've zipped the vcf file and indexed it
 gzip <file> 
 tabix -p vcf input.vcf.gz
@@ -19,12 +23,16 @@ grep "^6" input.vcf | wc -l
 
 # the file with the genetic coordinates of chr6 is called: gen_coords_chr6_only.vcf
 
-# I've ran the script 230210_filter_vcf_on_position.py to check for the positions from the T1D dataset, in the british population 
 
-# next I've counted the number of lines in the outputted file, and there are 62. so 62 positions of variants
 
-# then I've populated the ID column on the British_filtered_variants.vcf using this script
-python 230210_filling_id_in_british_vcf.py
+# Then, I use the gen_coords_chr6_only.vcf to filter the population vcfs
+230210_filter_vcf_on_position.py
+
+# This creates files called eg. British_filtered_variants.vcf
+
+# Then I need to populate the rs ID columns in these files using this script
+230210_filling_id_in_british_vcf.py
+
 
 
 # 13 Feb 2023. The same was done for the Japanese and Nigerian populations 
