@@ -71,7 +71,7 @@ python main.py
 ## SQL Database
 
 ## Data
-The data we have used in our web browser was obtained from various sources. Below is a brief description of where to find the relevant data.
+The data we have used in our web browser was obtained from various sources. Below is a brief description of where to find the relevant data. For further information on how we used the data and how you can replicate this refer to the sofware documentation.
 
 ### Genome Wide Association Study Data (GWAS)
 The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005147.
