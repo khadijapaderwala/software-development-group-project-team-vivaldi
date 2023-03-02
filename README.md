@@ -11,7 +11,7 @@ The aim of this project was to produce a functioning web-based software tool tha
 
 
 
-## Environment setup and Dependencies
+## Environment Setup
 
 1. Install [virtualenv](https://pypi.org/project/virtualenv/) in global Python:
 
@@ -66,7 +66,8 @@ python main.py
 
 ## Technical Details
 [Insert technical details about your web browser, including programming languages, frameworks, and databases used]
-## Databases
+## Data
+The data we have used in our web browser was obtained from various sources. Below is a brief description of where to find the relevant data.
 
 ### Genome Wide Association Study Data (GWAS)
 The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005147.
@@ -75,7 +76,7 @@ The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotr
 The CADD scores which highlight functional impact of the SNPS were obtained from SNPnexus https://www.snp-nexus.org/v4/.
 
 ### Gene Functional Terms
-The functional terms were obtained from SNPnexus connected to reactome data to link mapped genes to their biological pathways.
+The functional terms were obtained from SNPnexus connected to reactome data to link mapped genes to their biological pathways. https://www.snp-nexus.org/v4/.
 
 ### Population Data
 All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
