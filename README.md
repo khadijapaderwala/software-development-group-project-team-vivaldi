@@ -2,14 +2,14 @@
 ##  Software Development Project - Team Vivaldi
 
 ## Description
-'T1 Diabetes SNP search' is a tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
-Team members are Marta, Khadija, Thuvarahgan, Jiang and Tobi. 
+'T1 Diabetes SNP search' is a web browser tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
+Team members are Marta, Khadija, Thuvarahgan, Jiang and Tobi.
 
-The aim of this project was to produce a functioning web-based software tool that allows users to search and explore genetic variants that have been associated with high susceptibility of Type 1 Diabetes. The tool also retrieves genomic information and integrates it with population data and functional information. The database combines information from various online databases such as, GWAS, SNPNexus, IGSR, Reactome, Genecard.
+Type 1 diabetes (T1D) is a chronic autoimmune disorder in which the body’s immune system attacks and destroys pancreatic cells, specifically the β cells in the pancreas which produces insulin. The lack of insulin results in blood sugar levels not being regulated properly therefore blood glucose levels rise, which can cause further symptoms and serious complications over time. Type 1 diabetes usually develops in childhood or adolescence, but it can also occur in adulthood. While there is currently no cure for type 1 diabetes, it can be managed with insulin therapy and other treatments to help people with the condition live long and healthy lives.  
 
+Genome wide association studies (GWAS) have been able to identify single nucleotide polymorphisms (SNPs) that are linked to type 1 diabetes. Databases such as SNPnexus can provide information about SNPs such as functional information, functional impact or clinical relevance. The aim of this project was to produce a functioning web-based software tool that allows users to search and explore genetic variants that have been associated with high susceptibility of Type 1 Diabetes. The tool also retrieves genomic information and integrates it with population data and functional information. We have called it ‘T1D SNP Search Tool.’  
 
-
-
+The website allows users to search for genetic variants by single nucleotide polymorphism (SNP) name (rs ID), genomic position or gene name. For each query, the web page returns information on SNP name (rs ID), genomic position, p-value from association tests, mapped genes, allele frequency in three different human populations (British GBR, Nigerian ESN, Japanese JPT), one measure of functional impact and one functional term associated with each mapped gene. When users search the website for SNPs by genomic region range, the webpage returns a Manhattan plot of all the p-values returned from the search. The webpage has an option to select SNPs, calculate linkage disequilibrium (LD) of those SNPs, and return plots for those LD measures. We aim for this tool to be used to interpret the mapping of the genetic basis of T1D. 
 
 ## Environment Setup
 
