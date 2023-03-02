@@ -68,20 +68,24 @@ python main.py
 [Insert technical details about your web browser, including programming languages, frameworks, and databases used]
 ## Databases
 
-### Genome Wide Association Studies (GWAS)
+### Genome Wide Association Study Data (GWAS)
+The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005147.
 
 ### SNP Measures of Functional Impact
 
+
 ### Gene Functional Terms
 
+
 ### Population Data
+All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
 
 ### Haplotype Data for Linkage Disequilibrium Calculations
+
 
 ## License
 
 ## Contact
 
-## Acknowledgments
 
 
