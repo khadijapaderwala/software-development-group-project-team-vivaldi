@@ -73,6 +73,7 @@ On the index page, if the user wants to search by gene name, they can enter the 
 ## Programming Language
 
 ## SQL Database
+Made up of 4 tables: SNP, Gene, Gene_SNP and P_Value. SNP table contains id (text), CHR_N (integer), CHR_P (integer), REF_ALLELE (real), ALT_ALLELE (real), GBR_REF (real), GBR_ALT (real), JPT_REF (real), JPT_ALT (real), ESN_REF (real), ESN_ALT (real), CADD (real). Gene table contains id (text) and Function (text). Gene_SNP is a join table that joins Gene and SNP tables using their respective id. P_Value has Link (text), Date Published (integer), M_log (real), P_value (real) and RS_ID (text) which links to the SNP table's id column.
 
 ## Data
 The data we have used in our web browser was obtained from various sources. Below is a brief description of where to find the relevant data. For further information on how we used the data and how you can replicate this refer to the sofware documentation.
