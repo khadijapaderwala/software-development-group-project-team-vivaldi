@@ -30,7 +30,7 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-3.1 Source the environment (on Windows):
+3.2 Source the environment (on Windows):
 ```shell
 venv\Scripts\activate
 ```
