@@ -5,7 +5,7 @@
 'T1 Diabetes SNP search' is a tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
 Team members are Marta, Khadija, Thuvarahgan, Jiang and Tobi. 
 
-This app ....
+The aim of this project was to produce a functioning web-based software tool that allows users to search and explore genetic variants that have been associated with high susceptibility of Type 1 Diabetes. The tool also retrieves genomic information and integrates it with population data and functional information. We have called it ‘T1D SNP Search Tool.’ 
 
 
 
