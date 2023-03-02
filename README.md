@@ -66,6 +66,10 @@ python main.py
 
 ## Technical Details
 [Insert technical details about your web browser, including programming languages, frameworks, and databases used]
+## Programming Language
+
+## SQL Database
+
 ## Data
 The data we have used in our web browser was obtained from various sources. Below is a brief description of where to find the relevant data.
 
