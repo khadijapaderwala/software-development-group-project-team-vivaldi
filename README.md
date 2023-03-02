@@ -68,9 +68,8 @@ On the index page if the user wants to search by genomic region range, they must
 ### Search by mapped genes
 On the index page, if the user wants to search by gene name, they can enter the gene name in uppercase or lowercase letters.
 
-## Technical Details
-[Insert technical details about your web browser, including programming languages, frameworks, and databases used]
-## Programming Language
+## Technologies
+We used Python version 3.9.13, HTML and SQL
 
 ## SQL Database
 Made up of 4 tables: SNP, Gene, Gene_SNP and P_Value. SNP table contains id (text), CHR_N (integer), CHR_P (integer), REF_ALLELE (real), ALT_ALLELE (real), GBR_REF (real), GBR_ALT (real), JPT_REF (real), JPT_ALT (real), ESN_REF (real), ESN_ALT (real), CADD (real). Gene table contains id (text) and Function (text). Gene_SNP is a join table that joins Gene and SNP tables using their respective id. P_Value has Link (text), Date Published (integer), M_log (real), P_value (real) and RS_ID (text) which links to the SNP table's id column.
@@ -87,15 +86,16 @@ As a measure of functional impact, we chose CADD scores for the SNPs. CADD scori
 ### Gene Functional Terms
 Gene functional terms are terms that describe the biological process, cellular component, or molecular function. A database that can be used to obtain gene and SNP functional data is SNPnexus, which integrates data from multiple sources, including the Reactome pathway database. The functional terms were obtained from SNPnexus connected to reactome data to link mapped genes to their biological pathways. https://www.snp-nexus.org/v4/.
 
-### Population Data
+### Population Data and Haplotype Data for Linkage Disequilibrium Calculations
 The 1000 genomes project has successfully established detailed information regarding human genetic variation. This is possible as the individual haplotypes of many participants have been mapped to a reference human genome. The 1000 genomes project data is available at the international genome sample resource (IGSR) website. All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
 
-### Haplotype Data for Linkage Disequilibrium Calculations
-The haplotype data was also obtained from the IGSR website https://www.internationalgenome.org.
-
-## License
 
 ## Contact
+Khadija - bt22050@qmul.ac.uk
+Jiang - bt22068@qmul.ac.uk 
+Marta - bt22043@qmul.ac.uk 
+Thuvarahgan - bt22061@qmul.ac.uk 
+Tobi - bt211031@qmul.ac.uk 
 
 
 
