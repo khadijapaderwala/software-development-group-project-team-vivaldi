@@ -47,6 +47,7 @@ pip install -r requirements.txt
 pip freeze > requirements.txt
 ``` 
 
+6. Run the main.py python script:
 ```shell
 python main.py
 ```
