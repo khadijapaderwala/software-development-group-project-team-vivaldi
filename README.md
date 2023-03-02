@@ -66,6 +66,17 @@ python main.py
 
 ## Technical Details
 [Insert technical details about your web browser, including programming languages, frameworks, and databases used]
+## Databases
+
+### Genome Wide Association Studies (GWAS)
+
+### SNP Measures of Functional Impact
+
+### Gene Functional Terms
+
+### Population Data
+
+### Haplotype Data for Linkage Disequilibrium Calculations
 
 ## License
 
