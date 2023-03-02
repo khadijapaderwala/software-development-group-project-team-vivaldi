@@ -72,7 +72,7 @@ python main.py
 The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005147.
 
 ### SNP Measures of Functional Impact
-
+The CADD scores which highlight functional impact of the SNPS were obtained from SNPnexus https://www.snp-nexus.org/v4/.
 
 ### Gene Functional Terms
 
