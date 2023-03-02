@@ -74,16 +74,16 @@ python main.py
 The data we have used in our web browser was obtained from various sources. Below is a brief description of where to find the relevant data. For further information on how we used the data and how you can replicate this refer to the sofware documentation.
 
 ### Genome Wide Association Study Data (GWAS)
-The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005147.
+We obtained type 1 diabetes GWAS data from the NHGRI-EBI Catalog of human genome-wide association studies to investigate the genetic basis of T1D. The NHGRI-EBI Catalog is a database that includes information on published genome-wide association studies from various populations worldwide. The results of this search included information on the genetic variants, their frequencies, and effect sizes on the risk of type 1 diabetes from various populations. The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005147.
 
 ### SNP Measures of Functional Impact
-The CADD scores which highlight functional impact of the SNPS were obtained from SNPnexus https://www.snp-nexus.org/v4/.
+As a measure of functional impact, we chose CADD scores for the SNPs. CADD scoring is a measure of deleteriousness of single nucleotide variants in the human genome. The CADD scores which highlight functional impact of the SNPS were obtained from SNPnexus https://www.snp-nexus.org/v4/.
 
 ### Gene Functional Terms
-The functional terms were obtained from SNPnexus connected to reactome data to link mapped genes to their biological pathways. https://www.snp-nexus.org/v4/.
+Gene functional terms are terms that describe the biological process, cellular component, or molecular function. A database that can be used to obtain gene and SNP functional data is SNPnexus, which integrates data from multiple sources, including the Reactome pathway database. The functional terms were obtained from SNPnexus connected to reactome data to link mapped genes to their biological pathways. https://www.snp-nexus.org/v4/.
 
 ### Population Data
-All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
+The 1000 genomes project has successfully established detailed information regarding human genetic variation. This is possible as the individual haplotypes of many participants have been mapped to a reference human genome. The 1000 genomes project data is available at the international genome sample resource (IGSR) website. All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
 
 ### Haplotype Data for Linkage Disequilibrium Calculations
 The haplotype data was also obtained from the IGSR website https://www.internationalgenome.org.
