@@ -47,6 +47,10 @@ pip install -r requirements.txt
 pip freeze > requirements.txt
 ``` 
 
+```shell
+python main.py
+```
+
 [https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/]
 
 ## Usage
