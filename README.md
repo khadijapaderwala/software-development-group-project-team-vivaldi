@@ -75,7 +75,7 @@ The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotr
 The CADD scores which highlight functional impact of the SNPS were obtained from SNPnexus https://www.snp-nexus.org/v4/.
 
 ### Gene Functional Terms
-
+The functional terms were obtained from SNPnexus connected to reactome data to link mapped genes to their biological pathways.
 
 ### Population Data
 All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
