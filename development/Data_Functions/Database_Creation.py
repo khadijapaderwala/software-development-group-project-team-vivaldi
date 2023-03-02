@@ -1,7 +1,7 @@
 import csv, sqlite3
 from sqlite3 import OperationalError
 
-
+#place this script with Database.sql in the root directory relative to development folder
 def executeScriptsFromFile(filename, cur):
     # Open and read the file as a single buffer
     fd = open(filename, 'r')
@@ -28,7 +28,7 @@ def main():
     executeScriptsFromFile('Database.sql', cur) # connects to sql file which has the schema
 
 # Allele Frequencies import by reading the file and inserting into table of SQL
-    with open('Database/Datasets/Pop_Allele_Freq.csv','r') as fin:
+    with open('development/Datasets/Pop_Allele_Freq.csv','r') as fin:
         dr = csv.DictReader(fin)
         to_db = [(i['rsID'], i['REF'], i['ALT'], i['GBR_REF_FREQ'], i['GBR_ALT_FREQ'], i['JPT_REF_FREQ'], i['JPT_ALT_FREQ'], i['ESN_REF_FREQ'], i['ESN_ALT_FREQ']) for i in dr]
 
@@ -44,7 +44,7 @@ def main():
     ?, ?, ?);""", to_db,)
 
 # CADD import
-    with open('Database/Datasets/CADD_C6.csv','r') as fin:
+    with open('development/Datasets/CADD_C6.csv','r') as fin:
         dr = csv.DictReader(fin)
         to_db = [(i['PHRED'], i['SNP']) for i in dr]
 
@@ -55,7 +55,7 @@ def main():
     WHERE id = ? ;""", to_db,)
 
 # Genomic Location for each SNP
-    with open('Database/Datasets/GWAS.tsv','r') as fin:
+    with open('development/Datasets/GWAS.tsv','r') as fin:
         dr = csv.DictReader(fin, delimiter='\t')
         to_db = [(i['CHR_ID'], i['CHR_POS'], i['SNPS']) for i in dr]
 
@@ -66,7 +66,7 @@ def main():
     id = ? ;""", to_db,)
 
 # Needed another table for p-value as ther's multiple of them for one SNP
-    with open('Database/Datasets/GWAS.tsv','r') as fin:
+    with open('development/Datasets/GWAS.tsv','r') as fin:
         dr = csv.DictReader(fin, delimiter='\t')
         to_db = [(i['SNPS'], i['DATE'], i['LINK'], i['P-VALUE'], i['PVALUE_MLOG']) for i in dr]
 
@@ -95,7 +95,7 @@ def main():
     ) ;""")
 
 #Gene with Functional Terms Import
-    with open('Database/Datasets/Gene_Term_Updated.txt','r') as fin:
+    with open('development/Datasets/Gene_Term_Updated.txt','r') as fin:
         dr = csv.DictReader(fin, delimiter='\t')
         to_db = [(i['Genes'], i['Function']) for i in dr]
 
@@ -105,7 +105,7 @@ def main():
         (?, ?);""", to_db,)
     
 #Gene with rs ID's
-    with open('Database/Datasets/ensembl.txt','r') as fin:
+    with open('development/Datasets/ensembl.txt','r') as fin:
         dr = csv.DictReader(fin, delimiter='\t')
         to_db = [(i['Symbol'], i['Variation ID']) for i in dr]
 
