@@ -56,13 +56,13 @@ python main.py
 
 ## Usage
 [Insert instructions for how to use your web browser, including any necessary input formats or parameters]
-# Search by SNP name (rsID)
+### Search by SNP name (rsID)
 
-# Search by genomic region
+### Search by genomic region
 
-# Search by genomic coordinates
+### Search by genomic coordinates
 
-# Search by mapped genes
+### Search by mapped genes
 
 ## Technical Details
 [Insert technical details about your web browser, including programming languages, frameworks, and databases used]
