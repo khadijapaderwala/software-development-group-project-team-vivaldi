@@ -1,8 +1,8 @@
-# Type 1 Diabetes SNP Search Tool
+# T1D SNP Search Tool
 ##  Software Development Project - Team Vivaldi
 
 ## Description
-'Type 1 Diabetes SNP search' is a web browser tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
+'T1D SNP Search Tool' is a web browser tool we have created as part of our MSc Bioinformatics Software Development Group Project. 
 Team members are Marta, Khadija, Thuvarahgan, Jiang and Tobi.
 
 Type 1 diabetes (T1D) is a chronic autoimmune disorder in which the body’s immune system attacks and destroys pancreatic cells, specifically the β cells in the pancreas which produces insulin. The lack of insulin results in blood sugar levels not being regulated properly therefore blood glucose levels rise, which can cause further symptoms and serious complications over time. 
