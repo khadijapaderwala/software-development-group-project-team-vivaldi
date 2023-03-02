@@ -81,7 +81,7 @@ The type 1 diabetes GWAS data was obtained from https://www.ebi.ac.uk/gwas/efotr
 All population data we have obtained is from the international genome sample resource website (IGSR) https://www.internationalgenome.org.
 
 ### Haplotype Data for Linkage Disequilibrium Calculations
-
+The haplotype data was also obtained from the IGSR website https://www.internationalgenome.org.
 
 ## License
 
